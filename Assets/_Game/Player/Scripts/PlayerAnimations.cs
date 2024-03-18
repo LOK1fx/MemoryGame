@@ -7,6 +7,7 @@ namespace LOK1game
     {
         private const string FLAG_WALKING = "IsWalking";
         private const string FLAG_AIMING = "IsAiming";
+        private const string TRIG_TAKE_DOC = "TakeDoc";
 
         [SerializeField] private Animator _armsAnimator;
 
@@ -33,6 +34,11 @@ namespace LOK1game
             {
                 _armsAnimator.SetBool(FLAG_WALKING, false);
             }
+        }
+
+        public void PlayDocsTakeSequance()
+        {
+            _armsAnimator.SetTrigger(TRIG_TAKE_DOC);
         }
     }
 }

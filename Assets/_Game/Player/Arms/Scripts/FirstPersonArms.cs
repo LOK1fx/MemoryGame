@@ -7,6 +7,8 @@ namespace LOK1game
     {
         public Transform CameraSocket => _cameraSocket;
         public Animator Animator { get; private set; }
+        public Transform RightHandSocket => _rightHandSocket;
+        public Transform LeftHandSocket => _leftHandSocket;
 
         [SerializeField] private Transform _cameraSocket;
         [SerializeField] private Transform _rightHandSocket;

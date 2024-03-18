@@ -6,7 +6,7 @@ using Cinemachine;
 namespace LOK1game.Player
 {
     [RequireComponent(typeof(PlayerMovement), typeof(PlayerCamera), typeof(PlayerState))]
-    [RequireComponent(typeof(Health))]
+    [RequireComponent(typeof(Health), typeof(PlayerInteraction))]
     public class Player : Pawn, IDamagable
     {
         public event Action OnRespawned;
@@ -17,6 +17,7 @@ namespace LOK1game.Player
         public PlayerCamera Camera { get; private set; }
         public PlayerState State { get; private set; }
         public FirstPersonArms FirstPersonArms => _firstPersonArms;
+        public PlayerInteraction Interaction { get; private set; }
         public Health Health { get; private set; }
         public bool IsDead { get; private set; }
 
@@ -37,6 +38,8 @@ namespace LOK1game.Player
             Camera = GetComponent<PlayerCamera>();
             Camera.Construct(this);
             State = GetComponent<PlayerState>();
+            Interaction = GetComponent<PlayerInteraction>();
+            Interaction.Construct(this);
 
             Movement.OnLand += OnLand;
             Movement.OnJump += OnJump;
@@ -82,6 +85,7 @@ namespace LOK1game.Player
 
             Camera.OnInput(this);
             Movement.SetAxisInput(inputAxis);
+            Interaction.OnInput(this);
 
             if (Input.GetKey(KeyCode.Space))
                 Movement.Jump();
