@@ -3,35 +3,38 @@ using LOK1game.Player;
 using System.Linq;
 using UnityEngine;
 
-public class PlayerSpawner : MonoBehaviour
+namespace LOK1game
 {
-    [SerializeField] private GameObject _player;
-    [SerializeField] private GameObject _playerCamera;
-
-    private Player _currentPlayer;
-
-    private void Start()
+    public class PlayerSpawner : MonoBehaviour
     {
-        var player = Instantiate(_player, GetSpawnPointPosition(), Quaternion.identity);
-        var camera = Instantiate(_playerCamera, Vector3.zero, Quaternion.identity);
+        [SerializeField] private GameObject _player;
+        [SerializeField] private GameObject _playerCamera;
 
-        _currentPlayer = player.GetComponent<Player>();
+        private Player.Player _currentPlayer;
 
-        Controller.Create<PlayerController>(_currentPlayer);
-    }
+        private void Start()
+        {
+            var player = Instantiate(_player, GetSpawnPointPosition(), Quaternion.identity);
+            var camera = Instantiate(_playerCamera, Vector3.zero, Quaternion.identity);
 
-    private Vector3 GetSpawnPointPosition()
-    {
-        var spawnPoints = FindObjectsOfType<CharacterSpawnPoint>().ToList();
+            _currentPlayer = player.GetComponent<Player.Player>();
 
-        if (spawnPoints.Count == 0)
-            return Vector3.zero;
+            Controller.Create<PlayerController>(_currentPlayer);
+        }
 
-        if (spawnPoints.Count < 1)
-            return Vector3.zero;
+        private Vector3 GetSpawnPointPosition()
+        {
+            var spawnPoints = FindObjectsOfType<CharacterSpawnPoint>().ToList();
 
-        var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
+            if (spawnPoints.Count == 0)
+                return Vector3.zero;
 
-        return spawnPoint.transform.position;
+            if (spawnPoints.Count < 1)
+                return Vector3.zero;
+
+            var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
+
+            return spawnPoint.transform.position;
+        }
     }
 }
