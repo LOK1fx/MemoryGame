@@ -205,7 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 65
   _groundCheckerPosition: {x: 0, y: 0.13, z: 0}
   _groundCheckerSize: {x: 0.325, y: 0.17, z: 0.325}
   _movementThreshold: 4

@@ -2,11 +2,14 @@ using LOK1game;
 using LOK1game.Player;
 using System.Linq;
 using UnityEngine;
+using System;
 
 namespace LOK1game
 {
     public class PlayerSpawner : MonoBehaviour
     {
+        public Action<Transform> OnSpanwedPlayer;
+
         [SerializeField] private GameObject _player;
         [SerializeField] private GameObject _playerCamera;
 
@@ -20,6 +23,7 @@ namespace LOK1game
             _currentPlayer = player.GetComponent<Player.Player>();
 
             Controller.Create<PlayerController>(_currentPlayer);
+            OnSpanwedPlayer?.Invoke(player.transform);
         }
 
         private Vector3 GetSpawnPointPosition()
@@ -32,7 +36,7 @@ namespace LOK1game
             if (spawnPoints.Count < 1)
                 return Vector3.zero;
 
-            var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
+            var spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Count)];
 
             return spawnPoint.transform.position;
         }
