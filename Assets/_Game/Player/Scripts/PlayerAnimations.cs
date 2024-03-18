@@ -8,6 +8,7 @@ namespace LOK1game
         private const string FLAG_WALKING = "IsWalking";
         private const string FLAG_AIMING = "IsAiming";
         private const string TRIG_TAKE_DOC = "TakeDoc";
+        private const string TRIG_DEATH = "Death";
 
         [SerializeField] private Animator _armsAnimator;
 
@@ -19,6 +20,12 @@ namespace LOK1game
         private void Start()
         {
             _player = GetComponent<Player.Player>();
+            _player.OnDeath += OnPlayerDeath;
+        }
+
+        private void OnDestroy()
+        {
+            _player.OnDeath -= OnPlayerDeath;
         }
 
         private void Update()
@@ -39,6 +46,11 @@ namespace LOK1game
         public void PlayDocsTakeSequance()
         {
             _armsAnimator.SetTrigger(TRIG_TAKE_DOC);
+        }
+
+        private void OnPlayerDeath()
+        {
+            _armsAnimator.SetTrigger(TRIG_DEATH);
         }
     }
 }
