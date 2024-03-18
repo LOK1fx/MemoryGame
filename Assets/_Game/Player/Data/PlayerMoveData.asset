@@ -21,4 +21,4 @@ MonoBehaviour:
   SprintGoundMaxVelocity: 10
   AirAccelerate: 5
   AirMaxVelocity: 5.5
-  JumpForce: 35
+  JumpForce: 30

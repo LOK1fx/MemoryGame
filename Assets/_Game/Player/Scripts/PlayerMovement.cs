@@ -102,7 +102,7 @@ namespace LOK1game.Player
 
                 Vector3 velocity;
 
-                var moveParams = new CharacterMath.MoveParams(GetNonNormDirection(_iAxis), Rigidbody.velocity);
+                var moveParams = new CharacterMath.MoveParams(GetDirection(_iAxis), Rigidbody.velocity);
                 var slopeMoveParams = new CharacterMath.MoveParams(GetSlopeDirection(_iAxis), Rigidbody.velocity);
                 var slideMoveParams = new CharacterMath.MoveParams(Vector3.zero, Rigidbody.velocity);
 
