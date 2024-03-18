@@ -15,7 +15,7 @@ namespace LOK1game
 
             if (sens == 0)
             {
-                return 5f; //default value
+                return 12f; //default value
             }
             else
             {

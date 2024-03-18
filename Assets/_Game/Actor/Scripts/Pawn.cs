@@ -1,18 +1,11 @@
 using System.Linq;
 using UnityEngine;
-using Logger = LOK1game.Utils.Logger;
 
 namespace LOK1game
 {
     public abstract class Pawn : Actor, IPawn
     {
-        public bool IsLocal
-        {
-            get
-            {
-                return photonView.IsMine;
-            }
-        }
+        public bool IsLocal;
 
         public EPlayerType PlayerType => playerType;
 
@@ -52,24 +45,5 @@ namespace LOK1game
 
             return spawnPoint.transform.position;
         }
-
-#region Loggers
-
-        public Logger GetPlayerLogger()
-        {
-            return GetLoggers().GetLogger(ELoggerGroup.Player);
-        }
-
-        public Logger GetEnemiesLogger()
-        {
-            return GetLoggers().GetLogger(ELoggerGroup.Enemies);
-        }
-
-        public Logger GetAILogger()
-        {
-            return GetLoggers().GetLogger(ELoggerGroup.AI);
-        }
-
-        #endregion
     }
 }

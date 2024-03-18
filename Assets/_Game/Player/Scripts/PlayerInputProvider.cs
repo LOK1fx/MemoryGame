@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
 
 namespace LOK1game.Player
 {
     [RequireComponent(typeof(Player))]
-    public class PlayerInputProvider : MonoBehaviourPunCallbacks
+    public class PlayerInputProvider : MonoBehaviour
     {
         [SerializeField] private List<IInputabe> _inputables = new List<IInputabe>();
 
@@ -23,7 +22,7 @@ namespace LOK1game.Player
 
         private void Update()
         {
-            if (photonView.IsMine == false)
+            if (_player != null && _player.IsLocal == true)
                 return;
 
             foreach (var inputable in _inputables)

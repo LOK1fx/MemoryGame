@@ -47,11 +47,8 @@ namespace LOK1game.Player
         public void Construct(Player player)
         {
             _player = player;
-        }
 
-        private void Start()
-        {
-            if (photonView.IsMine)
+            if (_player.IsLocal)
             {
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
@@ -63,13 +60,16 @@ namespace LOK1game.Player
                 _camera.Priority = 0;
                 _camera.gameObject.tag = Constants.Tags.UNTAGGED;
             }
+        }
 
+        private void Start()
+        {
             DesiredPosition = _cameraTransform.localPosition;
         }
 
-        private void LateUpdate()
+        private void Update()
         {
-            if (photonView.IsMine == false)
+            if (_player == null || _player.IsLocal != true)
                 return;
 
             var targetRot = Quaternion.Euler(_yRotation, _xRotation, Tilt);
@@ -87,7 +87,7 @@ namespace LOK1game.Player
 
         private void FixedUpdate()
         {
-            if (photonView.IsMine == false)
+            if (_player == null || _player.IsLocal != true)
                 return;
 
             _recoilCameraRotation = Vector3.Lerp(_recoilCameraRotation, Vector3.zero, _recoilCameraReturnSpeed * Time.deltaTime);

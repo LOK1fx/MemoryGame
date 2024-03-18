@@ -1,11 +1,10 @@
 using System;
 using UnityEngine;
-using Photon.Pun;
 
 namespace LOK1game.Player
 {
     [RequireComponent(typeof(PlayerState), typeof(Rigidbody), typeof(CapsuleCollider))]
-    public class PlayerMovement : MonoBehaviourPunCallbacks
+    public class PlayerMovement : MonoBehaviour
     {
         #region Events
 
