@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 2855878876504026404, guid: 11661541d7429f949a66e49a5d9d1e13, type: 3}
   _playerCamera: {fileID: 1520641342919911140, guid: 5cc6e94b2d669bc44b4deb223c63a2ba, type: 3}
+  _playerHud: {fileID: 883305944283003677, guid: badca4bdef24f4e47a7624315cd114c6, type: 3}
