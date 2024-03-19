@@ -29,10 +29,10 @@ namespace LOK1game
             _player.Interaction.OnStartHighlithing -= OnPlayerStartedInteraction;
         }
 
-        private void OnPlayerStartedInteraction(string tooltip)
+        private void OnPlayerStartedInteraction(string tooltip, bool isActive)
         {
             _interactionText.text = tooltip;
-            _interactionText.gameObject.SetActive(true);
+            _interactionText.gameObject.SetActive(isActive);
         }
 
         private void OnPlayerDeath()
