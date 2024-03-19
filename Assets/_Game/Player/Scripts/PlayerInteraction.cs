@@ -6,25 +6,20 @@ namespace LOK1game
     public class PlayerInteraction : MonoBehaviour, IInputabe
     {
         public event Action OnStartInteraction;
-        public event Action<string> OnStartHighlithing;
+        public event Action<string, bool> OnStartHighlithing;
 
         [SerializeField] private float _interactionLength;
         [SerializeField] private LayerMask _interactableLayerMask;
 
-        //[SerializeField] private InteractionView _interactionView;
-
         private Player.Player _player;
         private Transform _cameraTransform;
+
+        private IInteractable _currentInteractable;
 
         public void Construct(Player.Player player)
         {
             _player = player;
             _cameraTransform = _player.Camera.GetCameraTransform();
-        }
-
-        private void Update()
-        {
-            
         }
 
         public void OnInput(object sender)
@@ -42,25 +37,40 @@ namespace LOK1game
                         Debug.DrawRay(_cameraTransform.position, _cameraTransform.forward * _interactionLength, Color.green, 1f);
                     }
 
-                    interactable.OnHighlight();
-                    OnStartHighlithing?.Invoke("Press F to take the document");
+                    InteractableEnter(interactable);
                 }
-            }   
-        }
-
-        /*
-        private void InteractableRay()
-        {
-            bool isInteracteble = false;
-
-            if (Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out var hit,
-                    _interactionLength, _interactableLayerMask, QueryTriggerInteraction.Collide))
-            {
-                
+                else
+                {
+                    InteractableExit();
+                }
             }
-
-            _interactionView.DisplayTextInteracrion(isInteracteble);
+            else InteractableExit();
         }
-        */
+
+        private void InteractableEnter(IInteractable interactable)
+        {
+            if (interactable != _currentInteractable)
+            {
+                if (_currentInteractable != null)
+                {
+                    _currentInteractable.OnHighlight(false);
+                    OnStartHighlithing?.Invoke("Press F to take the document", false);
+                }
+                _currentInteractable = interactable;
+                _currentInteractable.OnHighlight(true);
+                OnStartHighlithing?.Invoke("Press F to take the document", true);
+            }
+        }
+
+        private void InteractableExit()
+        {
+            if (_currentInteractable != null)
+            {
+                _currentInteractable.OnHighlight(false);
+                OnStartHighlithing?.Invoke("Press F to take the document", false);
+                _currentInteractable = null;
+            }
+        }
+
     }
 }
