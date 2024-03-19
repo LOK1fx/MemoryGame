@@ -29,7 +29,7 @@ namespace LOK1game
             lineRenderer.SetPosition(0, _firePoint.position);
             lineRenderer.SetPosition(1, _player.transform.position);
 
-            _player.Health.ReduceHealth(100);
+            _player.TakeDamage(new Damage(100));
         }
     }
 }
