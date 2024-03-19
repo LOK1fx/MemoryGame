@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4658233677153741722}
   - component: {fileID: 4658233677153741725}
+  - component: {fileID: 5489847221308790770}
   m_Layer: 1
   m_Name: PostProcessing
   m_TagString: Untagged
@@ -49,3 +50,15 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 100
+--- !u!114 &5489847221308790770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4658233677153741723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11d290ef277ed041a54614b961aa37c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
