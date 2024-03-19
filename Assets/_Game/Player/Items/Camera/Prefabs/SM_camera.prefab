@@ -1491,7 +1491,7 @@ MonoBehaviour:
   _flashlight: {fileID: 6385553030731516852}
   _interestPointMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 513
   _interestPointMaxDistance: 100
   _flashlightShowTime: 0.125
   _photoWidth: 412
