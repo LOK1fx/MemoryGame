@@ -12,6 +12,7 @@ namespace LOK1game
 
         [SerializeField] private GameObject _player;
         [SerializeField] private GameObject _playerCamera;
+        [SerializeField] private GameObject _playerHud;
 
         private Player.Player _currentPlayer;
 
@@ -19,11 +20,14 @@ namespace LOK1game
         {
             var player = Instantiate(_player, GetSpawnPointPosition(), Quaternion.identity);
             var camera = Instantiate(_playerCamera, Vector3.zero, Quaternion.identity);
+            var hud = Instantiate(_playerHud, Vector3.zero, Quaternion.identity);
 
             _currentPlayer = player.GetComponent<Player.Player>();
 
-            Controller.Create<PlayerController>(_currentPlayer);
+            var controller = Controller.Create<PlayerController>(_currentPlayer);
             OnSpanwedPlayer?.Invoke(player.transform);
+
+            hud.GetComponent<IPlayerHud>().Bind(player.GetComponent<Player.Player>(), controller);
         }
 
         private Vector3 GetSpawnPointPosition()
