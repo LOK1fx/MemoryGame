@@ -25,5 +25,10 @@ namespace LOK1game
 
             sender.GetComponent<PlayerAnimations>().PlayDocsTakeSequance();
         }
+
+        public void OnHighlight()
+        {
+            Debug.Log("awd");
+        }
     }
 }

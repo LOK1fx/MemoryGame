@@ -7,5 +7,7 @@ namespace LOK1game
     public interface IInteractable
     {
         void OnInteract(Player.Player sender);
+
+        void OnHighlight();
     }
 }
