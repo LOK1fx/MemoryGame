@@ -19,6 +19,6 @@ MonoBehaviour:
   CrouchGroundMaxVelocity: 6
   SprintGoundAccelerate: 100
   SprintGoundMaxVelocity: 10
-  AirAccelerate: 5
-  AirMaxVelocity: 5.5
+  AirAccelerate: 0
+  AirMaxVelocity: 3
   JumpForce: 30

@@ -7,6 +7,11 @@ namespace LOK1game
 
     public class Doc : MonoBehaviour, IInteractable
     {
+        public string Note => _note;
+
+        [SerializeField] [TextArea] private string _note;
+
+        [Space]
         [SerializeField] private GameObject _inHandDocModel;
 
         private Collider _interactionCollider;
