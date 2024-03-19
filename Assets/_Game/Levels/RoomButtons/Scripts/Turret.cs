@@ -10,14 +10,14 @@ namespace LOK1game
 
         [SerializeField] private PlayerSpawner _playerSpawner;
 
-        private Transform _player;
+        private Player.Player _player;
 
         private void Awake()
         {
             _playerSpawner.OnSpanwedPlayer += GetPlayer;
         }
 
-        private void GetPlayer(Transform player)
+        private void GetPlayer(Player.Player player)
         {
             _player = player;
         }
@@ -27,9 +27,9 @@ namespace LOK1game
             var line = Instantiate(_prefabLine, null);
             var lineRenderer = line.GetComponent<LineRenderer>();
             lineRenderer.SetPosition(0, _firePoint.position);
-            lineRenderer.SetPosition(1, _player.position);
+            lineRenderer.SetPosition(1, _player.transform.position);
 
-            Debug.Log("Dead");
+            _player.TakeDamage(new Damage(100));
         }
     }
 }

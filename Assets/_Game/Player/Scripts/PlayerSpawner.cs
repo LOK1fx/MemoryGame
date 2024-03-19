@@ -8,7 +8,7 @@ namespace LOK1game
 {
     public class PlayerSpawner : MonoBehaviour
     {
-        public Action<Transform> OnSpanwedPlayer;
+        public Action<Player.Player> OnSpanwedPlayer;
 
         [SerializeField] private GameObject _player;
         [SerializeField] private GameObject _playerCamera;
@@ -25,7 +25,7 @@ namespace LOK1game
             _currentPlayer = player.GetComponent<Player.Player>();
 
             var controller = Controller.Create<PlayerController>(_currentPlayer);
-            OnSpanwedPlayer?.Invoke(player.transform);
+            OnSpanwedPlayer?.Invoke(_currentPlayer);
 
             hud.GetComponent<IPlayerHud>().Bind(player.GetComponent<Player.Player>(), controller);
         }
