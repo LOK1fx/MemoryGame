@@ -100,12 +100,6 @@ namespace LOK1game.Player
             if(Input.GetKeyUp(KeyCode.LeftControl))
                 if(Movement.CanStand())
                     Movement.StopCrouch();
-
-            if (Input.GetKeyDown(KeyCode.K))
-                TakeDamage(new Damage(Health.MaxHp));
-
-            if (Input.GetKeyDown(KeyCode.U))
-                TakeDamage(new Damage(15));
         }
 
         private void OnLand()
