@@ -818,6 +818,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2013113710, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
+      propertyPath: outlineWidth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2013113710, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
+      propertyPath: outlineColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2013113710, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
+      propertyPath: outlineColor.g
+      value: 0.9093012
+      objectReference: {fileID: 0}
+    - target: {fileID: 2013113710, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
+      propertyPath: outlineColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 74374229207877764, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
       propertyPath: m_Name
       value: Doc

@@ -8,6 +8,7 @@ namespace LOK1game
     {
         void OnInteract(Player.Player sender);
 
-        void OnHighlight();
+        void OnHighlight(bool isActive);
+
     }
 }

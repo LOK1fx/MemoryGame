@@ -3,15 +3,20 @@ using UnityEngine;
 namespace LOK1game
 {
     [RequireComponent(typeof(Collider))]
+    [RequireComponent(typeof(Outline))]
+
     public class Doc : MonoBehaviour, IInteractable
     {
         [SerializeField] private GameObject _inHandDocModel;
 
         private Collider _interactionCollider;
+        private Outline _outline;
 
         private void Start()
         {
             _interactionCollider = GetComponent<Collider>();
+            _outline = GetComponent<Outline>();
+            _outline.enabled = false;
         }
 
         public void OnInteract(Player.Player sender)
@@ -26,9 +31,9 @@ namespace LOK1game
             sender.GetComponent<PlayerAnimations>().PlayDocsTakeSequance();
         }
 
-        public void OnHighlight()
+        public void OnHighlight(bool isActive)
         {
-            Debug.Log("awd");
+            _outline.enabled = isActive;
         }
     }
 }
