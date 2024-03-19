@@ -174,6 +174,8 @@ namespace LOK1game.Player
             {
                 var respawnPosition = GetRandomSpawnPosition(true);
 
+                Camera.UnlockCursor();
+
                 //photonView.RPC(nameof(Respawn), RpcTarget.All, new object[3] { respawnPosition.x, respawnPosition.y, respawnPosition.z });
             }
         }

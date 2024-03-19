@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Game/Scenes/LOK1/LOK1_proto.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/_Game/Scenes/Labirint01.unity
+    guid: ae21c31f6e8a9b947a39ed49684aeb42
+  - enabled: 1
+    path: Assets/_Game/Scenes/Labirint01_03.unity
+    guid: b83ccf5994ed6f840a12a71a3222cf6e
+  - enabled: 1
+    path: Assets/_Game/Scenes/Labirint01_ThePast.unity
+    guid: f2a62d8a0e071814b95d601f253937bb
+  - enabled: 1
+    path: Assets/_Game/Scenes/Midlmm/Midlmm_RoomButtons.unity
+    guid: b392d0e3949c8a847af0a5d54949cbcc
   m_configObjects: {}
