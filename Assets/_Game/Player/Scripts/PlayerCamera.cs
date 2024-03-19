@@ -50,8 +50,7 @@ namespace LOK1game.Player
 
             if (_player.IsLocal)
             {
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
+                LockCursor();
 
                 _sensivity = Settings.GetSensivity();
             }
@@ -93,6 +92,18 @@ namespace LOK1game.Player
             _recoilCameraRotation = Vector3.Lerp(_recoilCameraRotation, Vector3.zero, _recoilCameraReturnSpeed * Time.deltaTime);
             _currentRecoilCameraRotation = Vector3.Slerp(_currentRecoilCameraRotation, _recoilCameraRotation, _recoilCameraRotationSpeed * Time.fixedDeltaTime);
             _recoilCamera.localRotation = Quaternion.Euler(_currentRecoilCameraRotation);
+        }
+
+        public void LockCursor()
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        public void UnlockCursor()
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
 
         public void TriggerRecoil(Vector3 recoil)

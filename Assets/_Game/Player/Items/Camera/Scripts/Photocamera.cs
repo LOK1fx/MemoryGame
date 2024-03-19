@@ -10,11 +10,12 @@ namespace LOK1game
         [SerializeField] private Camera _defaultCamera;
         [SerializeField] private Camera _photoCamera;
         [SerializeField] private Light _flashlight;
-        [SerializeField] private LayerMask _interestPointMask;
-        [SerializeField] private float _interestPointMaxDistance = 100f;
+        [SerializeField] private Animator _cameraUILightOverlayAnimator;
 
         [Space]
         [SerializeField] private float _flashlightShowTime = 0.2f;
+        [SerializeField] private LayerMask _interestPointMask;
+        [SerializeField] private float _interestPointMaxDistance = 100f;
 
         [Space]
         [SerializeField] private int _photoWidth;
@@ -48,6 +49,8 @@ namespace LOK1game
 
             _defaultCamera.gameObject.SetActive(true);
             _photoCamera.gameObject.SetActive(false);
+
+            _cameraUILightOverlayAnimator.Play("PhotocameraUI_TakePhoto");
 
             TryGetInterestPoint(out pointOfInterest);
         }
