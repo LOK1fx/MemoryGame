@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c9a8b054d468b3439599b8edd32f4ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _note: 
   _inHandDocModel: {fileID: 9106675411965454205, guid: a8ecf536ff3141d44b7edf950be594eb, type: 3}
 --- !u!114 &2013113710
 MonoBehaviour:
