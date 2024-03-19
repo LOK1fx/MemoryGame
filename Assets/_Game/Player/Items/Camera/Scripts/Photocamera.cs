@@ -10,12 +10,17 @@ namespace LOK1game
         [SerializeField] private Camera _defaultCamera;
         [SerializeField] private Camera _photoCamera;
         [SerializeField] private Light _flashlight;
+        [SerializeField] private LayerMask _interestPointMask;
+        [SerializeField] private float _interestPointMaxDistance = 100f;
+
+        [Space]
+        [SerializeField] private float _flashlightShowTime = 0.2f;
 
         [Space]
         [SerializeField] private int _photoWidth;
         [SerializeField] private int _photoHeigth;
 
-        public void TakePhoto(out Texture2D photo)
+        public void TakePhoto(out Texture2D photo, out PointOfInterest pointOfInterest)
         {
             _defaultCamera.gameObject.SetActive(false);
             _photoCamera.gameObject.SetActive(true);
@@ -43,13 +48,28 @@ namespace LOK1game
 
             _defaultCamera.gameObject.SetActive(true);
             _photoCamera.gameObject.SetActive(false);
+
+            TryGetInterestPoint(out pointOfInterest);
+        }
+
+        private bool TryGetInterestPoint(out PointOfInterest pointOfInterest)
+        {
+            if(Physics.Raycast(_defaultCamera.transform.position, _defaultCamera.transform.forward,
+                out var hit, _interestPointMaxDistance, _interestPointMask, QueryTriggerInteraction.Collide))
+            {
+                return hit.collider.gameObject.TryGetComponent<PointOfInterest>(out pointOfInterest);
+            }
+
+            pointOfInterest = null;
+
+            return false;
         }
 
         private IEnumerator FlashingRoutine()
         {
             _flashlight.gameObject.SetActive(true);
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(_flashlightShowTime);
 
             _flashlight.gameObject.SetActive(false);
         }

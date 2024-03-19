@@ -1489,6 +1489,11 @@ MonoBehaviour:
   _defaultCamera: {fileID: 6320356877391035685}
   _photoCamera: {fileID: 4132930986880974921}
   _flashlight: {fileID: 6385553030731516852}
+  _interestPointMask:
+    serializedVersion: 2
+    m_Bits: 512
+  _interestPointMaxDistance: 100
+  _flashlightShowTime: 0.125
   _photoWidth: 412
   _photoHeigth: 246
 --- !u!33 &6385000036029043343

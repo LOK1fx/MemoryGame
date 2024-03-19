@@ -9,7 +9,7 @@ namespace LOK1game
     {
         public event Action OnStartCameraAim;
         public event Action OnStopCameraAim;
-        public event Action<Texture2D> OnPhotoTaken;
+        public event Action<Texture2D, string> OnPhotoTaken;
 
         [SerializeField] private Photocamera _photocamera;
 
@@ -43,9 +43,14 @@ namespace LOK1game
 
         private void TakePhoto()
         {
-            _photocamera.TakePhoto(out var photo);
+            _photocamera.TakePhoto(out var photo, out var pointOfInterest);
 
-            OnPhotoTaken?.Invoke(photo);
+            var note = "";
+
+            if (pointOfInterest != null)
+                note = pointOfInterest.Note;
+
+            OnPhotoTaken?.Invoke(photo, note);
         }
     }
 }

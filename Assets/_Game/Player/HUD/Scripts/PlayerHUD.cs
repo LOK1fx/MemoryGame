@@ -12,6 +12,7 @@ namespace LOK1game
         [SerializeField] private GameObject _deathScreen;
         [SerializeField] private TextMeshProUGUI _interactionText;
         [SerializeField] private RawImage _currentPhotoPreview;
+        [SerializeField] private TextMeshProUGUI _currentNoteText;
 
         private Player.Player _player;
         private PlayerController _controller;
@@ -44,9 +45,10 @@ namespace LOK1game
             _deathScreen.SetActive(true);
         }
 
-        private void OnPlayerTakedPhoto(Texture2D photo)
+        private void OnPlayerTakedPhoto(Texture2D photo, string note)
         {
             _currentPhotoPreview.texture = photo;
+            _currentNoteText.text = note;
         }
     }
 }
