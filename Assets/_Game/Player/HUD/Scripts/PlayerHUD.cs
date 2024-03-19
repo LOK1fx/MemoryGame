@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using LOK1game.Player;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace LOK1game
 {
@@ -10,6 +11,8 @@ namespace LOK1game
     {
         [SerializeField] private GameObject _deathScreen;
         [SerializeField] private TextMeshProUGUI _interactionText;
+        [SerializeField] private RawImage _currentPhotoPreview;
+        [SerializeField] private TextMeshProUGUI _currentNoteText;
 
         private Player.Player _player;
         private PlayerController _controller;
@@ -21,12 +24,14 @@ namespace LOK1game
 
             _player.OnDeath += OnPlayerDeath;
             _player.Interaction.OnStartHighlithing += OnPlayerStartedInteraction;
+            _player.ItemManager.OnPhotoTaken += OnPlayerTakedPhoto;
         }
 
         private void OnDestroy()
         {
             _player.OnDeath -= OnPlayerDeath;
             _player.Interaction.OnStartHighlithing -= OnPlayerStartedInteraction;
+            _player.ItemManager.OnPhotoTaken -= OnPlayerTakedPhoto;
         }
 
         private void OnPlayerStartedInteraction(string tooltip, bool isActive)
@@ -38,6 +43,12 @@ namespace LOK1game
         private void OnPlayerDeath()
         {
             _deathScreen.SetActive(true);
+        }
+
+        private void OnPlayerTakedPhoto(Texture2D photo, string note)
+        {
+            _currentPhotoPreview.texture = photo;
+            _currentNoteText.text = note;
         }
     }
 }
