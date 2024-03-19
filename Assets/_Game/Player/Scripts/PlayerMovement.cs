@@ -37,6 +37,8 @@ namespace LOK1game.Player
         [SerializeField] private Transform _directionTransform;
         [SerializeField] private PlayerMovementParams _movementData;
 
+        private PlayerMovementParams _defaultMoveData;
+
         private PlayerState _playerState;
 
         private Vector3 _moveDirection;
@@ -47,6 +49,7 @@ namespace LOK1game.Player
 
         private void Awake()
         {
+            _defaultMoveData = _movementData;
             _currentJumpCooldown = _jumpCooldown;
 
             Rigidbody = GetComponent<Rigidbody>();
@@ -84,6 +87,16 @@ namespace LOK1game.Player
         private void FixedUpdate()
         {
             Move();
+        }
+
+        public void SetMoveData(PlayerMovementParams moveData)
+        {
+            _movementData = moveData;
+        }
+
+        public void SetDeafaultMoveData()
+        {
+            _movementData = _defaultMoveData;
         }
 
         public void SetAxisInput(Vector2 input)
