@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 2855878876504026400}
   - component: {fileID: 8364930599369211317}
   - component: {fileID: 3225749364420705271}
+  - component: {fileID: 8783918265412556977}
   - component: {fileID: 2855878876504026406}
   - component: {fileID: 2855878876504026403}
   m_Layer: 7
@@ -252,6 +253,19 @@ MonoBehaviour:
   _interactableLayerMask:
     serializedVersion: 2
     m_Bits: 65
+--- !u!114 &8783918265412556977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2855878876504026404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df1741675cc6f04099b8691f1e606ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _photocamera: {fileID: 669523238419066426}
 --- !u!136 &2855878876504026406
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -757,6 +771,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7127b003451f3e445800e74d9390a077, type: 3}
+--- !u!114 &669523238419066426 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3686765874304963182, guid: 7127b003451f3e445800e74d9390a077, type: 3}
+  m_PrefabInstance: {fileID: 4206531175045184596}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 523049dd2469e8642a9c57a58ba1dfb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8829864968627994030
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ namespace LOK1game.Player
         public PlayerState State { get; private set; }
         public FirstPersonArms FirstPersonArms => _firstPersonArms;
         public PlayerInteraction Interaction { get; private set; }
+        public PlayerItemManager ItemManager { get; private set; }
         public Health Health { get; private set; }
         public bool IsDead { get; private set; }
 
@@ -40,6 +41,8 @@ namespace LOK1game.Player
             State = GetComponent<PlayerState>();
             Interaction = GetComponent<PlayerInteraction>();
             Interaction.Construct(this);
+            ItemManager = GetComponent<PlayerItemManager>();
+            ItemManager.Construct(this);
 
             Movement.OnLand += OnLand;
             Movement.OnJump += OnJump;
@@ -86,6 +89,7 @@ namespace LOK1game.Player
             Camera.OnInput(this);
             Movement.SetAxisInput(inputAxis);
             Interaction.OnInput(this);
+            ItemManager.OnInput(this);
 
             if (Input.GetKey(KeyCode.Space))
                 Movement.Jump();

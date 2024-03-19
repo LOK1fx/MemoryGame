@@ -21,18 +21,19 @@ namespace LOK1game
         {
             _player = GetComponent<Player.Player>();
             _player.OnDeath += OnPlayerDeath;
+            _player.ItemManager.OnStartCameraAim += OnPlayerStartCameraAim;
+            _player.ItemManager.OnStopCameraAim += OnPlayerStopCameraAim;
         }
 
         private void OnDestroy()
         {
             _player.OnDeath -= OnPlayerDeath;
+            _player.ItemManager.OnStartCameraAim -= OnPlayerStartCameraAim;
+            _player.ItemManager.OnStopCameraAim -= OnPlayerStopCameraAim;
         }
 
         private void Update()
         {
-            _armsAnimator.SetBool(FLAG_AIMING, Input.GetKey(KeyCode.Mouse1));
-
-
             if(_player.Movement.GetSpeed() > _movementSpeedThreashold)
             {
                 _armsAnimator.SetBool(FLAG_WALKING, true);
@@ -46,6 +47,16 @@ namespace LOK1game
         public void PlayDocsTakeSequance()
         {
             _armsAnimator.SetTrigger(TRIG_TAKE_DOC);
+        }
+
+        private void OnPlayerStartCameraAim()
+        {
+            _armsAnimator.SetBool(FLAG_AIMING, true);
+        }
+
+        private void OnPlayerStopCameraAim()
+        {
+            _armsAnimator.SetBool(FLAG_AIMING, false);
         }
 
         private void OnPlayerDeath()
