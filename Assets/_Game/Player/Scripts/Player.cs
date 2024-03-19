@@ -180,6 +180,13 @@ namespace LOK1game.Player
             }
         }
 
+        private void OnCollisionEnter(Collision collision)
+        {
+            if(Movement.GetSpeed() > 8f)
+            {
+                Health.ReduceHealth(Health.MaxHp);
+            }
+        }
 
         private void Respawn(float respawnPositionX, float respawnPositionY, float respawnPositionZ) //Photon RPC don't serialize/deserialize Vector3 type
         {
