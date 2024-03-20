@@ -6,12 +6,14 @@ public class Notebook : MonoBehaviour
     [SerializeField] private GameObject _prefabPhotoItem;
     [SerializeField] private Transform _contentNotes;
 
-    private List<NoteConfig> _notes;
+    private Dictionary<NoteConfig, GameObject> _notes;
 
     public void AddedNote(NoteConfig noteConfig)
     {
-        _notes.Add(noteConfig);
-
         var photoItem = Instantiate(_prefabPhotoItem, _contentNotes);
+        var photoItemView = photoItem.GetComponent<PhotoItemView>();
+        photoItemView.DisplayPhoto(noteConfig.Photo);
+
+        _notes.Add(noteConfig, photoItem);
     }
 }
