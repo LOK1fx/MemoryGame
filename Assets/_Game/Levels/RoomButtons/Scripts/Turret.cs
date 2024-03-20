@@ -8,16 +8,9 @@ namespace LOK1game
         [SerializeField] private GameObject _prefabLine;
         [SerializeField] private Transform _firePoint;
 
-        [SerializeField] private PlayerSpawner _playerSpawner;
-
         private Player.Player _player;
 
-        private void Awake()
-        {
-            _playerSpawner.OnSpanwedPlayer += GetPlayer;
-        }
-
-        private void GetPlayer(Player.Player player)
+        public void SetPlayer(Player.Player player)
         {
             _player = player;
         }
