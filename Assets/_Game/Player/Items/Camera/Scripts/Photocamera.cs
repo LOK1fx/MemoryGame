@@ -63,6 +63,7 @@ namespace LOK1game
             if(Physics.Raycast(_defaultCamera.transform.position, _defaultCamera.transform.forward,
                 out var hit, _interestPointMaxDistance, _interestPointMask, QueryTriggerInteraction.Collide))
             {
+                //Debug.DrawRay(_defaultCamera.transform.position, _defaultCamera.transform.forward * _interestPointMaxDistance, Color.red, 2f);
                 return hit.collider.gameObject.TryGetComponent<PointOfInterest>(out pointOfInterest);
             }
 
