@@ -13,6 +13,7 @@ namespace LOK1game
         [SerializeField] private TextMeshProUGUI _interactionText;
         [SerializeField] private RawImage _currentPhotoPreview;
         [SerializeField] private TextMeshProUGUI _currentNoteText;
+        [SerializeField] private GameObject _pauseMenu;
 
         private Player.Player _player;
         private PlayerController _controller;
@@ -25,13 +26,18 @@ namespace LOK1game
             _player.OnDeath += OnPlayerDeath;
             _player.Interaction.OnStartHighlithing += OnPlayerStartedInteraction;
             _player.ItemManager.OnPhotoTaken += OnPlayerTakedPhoto;
+
+            _controller.OnEscapePressed += OnEscapePressed;
         }
+        
 
         private void OnDestroy()
         {
             _player.OnDeath -= OnPlayerDeath;
             _player.Interaction.OnStartHighlithing -= OnPlayerStartedInteraction;
             _player.ItemManager.OnPhotoTaken -= OnPlayerTakedPhoto;
+
+            _controller.OnEscapePressed -= OnEscapePressed;
         }
 
         private void OnPlayerStartedInteraction(string tooltip, bool isActive)
@@ -49,6 +55,17 @@ namespace LOK1game
         {
             _currentPhotoPreview.texture = photo;
             _currentNoteText.text = note;
+        }
+
+        private void OnEscapePressed()
+        {
+            _pauseMenu.SetActive(!_pauseMenu.activeSelf);
+
+            //temporary, i think
+            if (_pauseMenu.activeSelf)
+                _player.Camera.UnlockCursor();
+            else
+                _player.Camera.LockCursor();
         }
     }
 }
