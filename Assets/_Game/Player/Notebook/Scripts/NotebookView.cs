@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class NotebookView : MonoBehaviour
 {
-
     [SerializeField] private GameObject _prefabPhotoItem;
     [SerializeField] private Transform _contentNotes;
 
