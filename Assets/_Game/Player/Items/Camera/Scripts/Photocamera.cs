@@ -45,7 +45,10 @@ namespace LOK1game
             var bytes = texture.EncodeToPNG();
             //Destroy(texture);
 
-            File.WriteAllBytes(Application.dataPath + "/PhotosTaken/" + "photo01" + ".png", bytes);
+            var randomValue = Random.Range(0, 1000000);
+            var nameFile = $"photo{System.DateTime.Now.Hour}{System.DateTime.Now.Minute}{System.DateTime.Now.Second}{randomValue}";
+
+            File.WriteAllBytes(Application.dataPath + "/PhotosTaken/" + nameFile + ".png", bytes);
 
             _defaultCamera.gameObject.SetActive(true);
             _photoCamera.gameObject.SetActive(false);

@@ -11,9 +11,8 @@ namespace LOK1game
     {
         [SerializeField] private GameObject _deathScreen;
         [SerializeField] private TextMeshProUGUI _interactionText;
-        [SerializeField] private RawImage _currentPhotoPreview;
-        [SerializeField] private TextMeshProUGUI _currentNoteText;
         [SerializeField] private GameObject _pauseMenu;
+        [SerializeField] private Notebook _notebook;
 
         private Player.Player _player;
         private PlayerController _controller;
@@ -23,9 +22,10 @@ namespace LOK1game
             _player = player;
             _controller = controller;
 
+            _notebook.Initialized(player);
+
             _player.OnDeath += OnPlayerDeath;
             _player.Interaction.OnStartHighlithing += OnPlayerStartedInteraction;
-            _player.ItemManager.OnPhotoTaken += OnPlayerTakedPhoto;
 
             _controller.OnEscapePressed += OnEscapePressed;
         }
@@ -35,7 +35,6 @@ namespace LOK1game
         {
             _player.OnDeath -= OnPlayerDeath;
             _player.Interaction.OnStartHighlithing -= OnPlayerStartedInteraction;
-            _player.ItemManager.OnPhotoTaken -= OnPlayerTakedPhoto;
 
             _controller.OnEscapePressed -= OnEscapePressed;
         }
@@ -49,12 +48,6 @@ namespace LOK1game
         private void OnPlayerDeath()
         {
             _deathScreen.SetActive(true);
-        }
-
-        private void OnPlayerTakedPhoto(Texture2D photo, string note)
-        {
-            _currentPhotoPreview.texture = photo;
-            _currentNoteText.text = note;
         }
 
         private void OnEscapePressed()

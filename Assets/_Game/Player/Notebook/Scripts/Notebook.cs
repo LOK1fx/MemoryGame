@@ -1,19 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class Notebook : MonoBehaviour
+
+namespace LOK1game
 {
-    [SerializeField] private GameObject _prefabPhotoItem;
-    [SerializeField] private Transform _contentNotes;
-
-    private Dictionary<NoteConfig, GameObject> _notes;
-
-    public void AddedNote(NoteConfig noteConfig)
+    public class Notebook : MonoBehaviour
     {
-        var photoItem = Instantiate(_prefabPhotoItem, _contentNotes);
-        var photoItemView = photoItem.GetComponent<PhotoItemView>();
-        photoItemView.DisplayPhoto(noteConfig.Photo);
+        [SerializeField] private NotebookView _notebookView;
 
-        _notes.Add(noteConfig, photoItem);
+        private List<PhotoConfig> _notes = new List<PhotoConfig>();
+        private Player.Player _player;
+
+        public void Initialized(Player.Player player)
+        {
+            _player = player;
+            _player.ItemManager.OnPhotoTaken += AddedNote;
+        }
+
+        public void AddedNote(PhotoConfig noteConfig)
+        {
+            _notes.Add(noteConfig);
+            _notebookView.SpawnNote(noteConfig);
+        }
+
+        private void OnDestroy()
+        {
+            _player.ItemManager.OnPhotoTaken -= AddedNote;
+        }
     }
 }

@@ -2,12 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class PhotoItemView : MonoBehaviour
 {
-    [SerializeField] private Image _photo;
+    [SerializeField] private TMP_Text _description;
 
-    public void DisplayPhoto(Sprite photo)
+    [SerializeField] private GameObject _frontPhoto;
+    [SerializeField] private GameObject _backPhoto;
+
+    public void DisplayFrontPhoto(Texture2D photo)
     {
-        _photo.sprite = photo;
+        _frontPhoto.SetActive(true);
+        _backPhoto.SetActive(false);
+        _frontPhoto.GetComponent<RawImage>().texture = photo;
+    }
+
+    public void DisplayBackPhoto(string description)
+    {
+        _backPhoto.SetActive(true);
+        _frontPhoto.SetActive(false);
+        _description.text = description;
     }
 }
