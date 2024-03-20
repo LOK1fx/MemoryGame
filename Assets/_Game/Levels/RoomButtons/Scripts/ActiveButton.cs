@@ -9,14 +9,38 @@ namespace LOK1game
 
         [SerializeField] private Turret[] _turrets;
 
+        [Space]
+        [SerializeField] private Transform _visualTransform;
+        [SerializeField] private Vector3 _onPressPositionOffset;
+
+        private Vector3 _defaultPosition;
+
+        private void Start()
+        {
+            _defaultPosition = _visualTransform.position;
+        }
+
         private void OnTriggerEnter(Collider other)
         {
-            if(other.TryGetComponent<Player.Player>(out var player) && _isTrap)
+            if(other.TryGetComponent<Player.Player>(out var player))
             {
-                foreach (var item in _turrets)
+                if(_isTrap)
                 {
-                    item.Shoot();
+                    foreach (var item in _turrets)
+                    {
+                        item.Shoot();
+                    }
                 }
+
+                _visualTransform.position = _defaultPosition - _onPressPositionOffset;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.TryGetComponent<Player.Player>(out var player))
+            {
+                _visualTransform.position = _defaultPosition;
             }
         }
     }

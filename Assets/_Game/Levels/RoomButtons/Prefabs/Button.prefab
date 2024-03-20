@@ -63,6 +63,8 @@ MonoBehaviour:
   _turrets:
   - {fileID: 0}
   - {fileID: 0}
+  _visualTransform: {fileID: 663630843193731694}
+  _onPressPositionOffset: {x: 0, y: 0.1, z: 0}
 --- !u!1001 &663630843193381900
 PrefabInstance:
   m_ObjectHideFlags: 0
