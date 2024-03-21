@@ -6,6 +6,7 @@ using TMPro;
 public class PhotoItemView : MonoBehaviour
 {
     [SerializeField] private TMP_Text _description;
+    [SerializeField] private TMP_Text _hiddenText;
 
     [SerializeField] private GameObject _frontPhoto;
     [SerializeField] private GameObject _backPhoto;
@@ -22,5 +23,10 @@ public class PhotoItemView : MonoBehaviour
         _backPhoto.SetActive(true);
         _frontPhoto.SetActive(false);
         _description.text = description;
+    }
+    public void EnableHiddenText(string hiddenText)
+    {
+        _hiddenText.text = hiddenText;
+        _hiddenText.gameObject.SetActive(true);
     }
 }

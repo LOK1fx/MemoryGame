@@ -8,5 +8,7 @@ namespace LOK1game
     public interface IPlayerHud
     {
         void Bind(Player.Player player, PlayerController controller);
+
+        void EnableHiddenText(int idPhoto);
     }
 }

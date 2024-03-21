@@ -45,12 +45,20 @@ namespace LOK1game
         {
             _photocamera.TakePhoto(out var photo, out var pointOfInterest);
 
-            var note = "";
+            var description = "";
+            var typePhoto = ETypePhoto.Simple;
+            var idPhoto = 0;
+            var hiddenText = "";
 
             if (pointOfInterest != null)
-                note = pointOfInterest.Note;
+            {
+                description = pointOfInterest.Description;
+                typePhoto = pointOfInterest.TypePhoto;
+                idPhoto = pointOfInterest.IdPhoto;
+                hiddenText = pointOfInterest.HiddenText;
+            }
 
-            OnPhotoTaken?.Invoke(new PhotoConfig(photo, note));
+            OnPhotoTaken?.Invoke(new PhotoConfig(typePhoto, idPhoto, photo, description, hiddenText));
         }
     }
 }

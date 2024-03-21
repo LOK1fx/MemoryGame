@@ -20,4 +20,9 @@ public class PhotoItem : MonoBehaviour
         if (_currentSide) _photoItemView.DisplayFrontPhoto(_noteConfig.Photo);
         else _photoItemView.DisplayBackPhoto(_noteConfig.Description);
     }
+
+    public void EnableHiddenText(string hiddenText)
+    {
+        _photoItemView.EnableHiddenText(hiddenText);
+    }
 }
