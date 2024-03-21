@@ -6,6 +6,8 @@ namespace LOK1game
 {
     public class Notebook : MonoBehaviour
     {
+        public NotebookView View => _notebookView;
+
         [SerializeField] private NotebookView _notebookView;
 
         private List<PhotoConfig> _photos = new List<PhotoConfig>();

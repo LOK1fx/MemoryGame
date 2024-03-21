@@ -13,9 +13,12 @@ namespace LOK1game
         [SerializeField] private TextMeshProUGUI _interactionText;
         [SerializeField] private GameObject _pauseMenu;
         [SerializeField] private Notebook _notebook;
+        
 
         private Player.Player _player;
         private PlayerController _controller;
+
+        private bool _isPhotosAlbumOpen;
 
         public void Bind(Player.Player player, PlayerController controller)
         {
@@ -28,8 +31,8 @@ namespace LOK1game
             _player.Interaction.OnStartHighlithing += OnPlayerStartedInteraction;
 
             _controller.OnEscapePressed += OnEscapePressed;
+            _controller.OnPhotosAlbumPressed += OnPhotosAlbumOpen;
         }
-        
 
         private void OnDestroy()
         {
@@ -37,6 +40,18 @@ namespace LOK1game
             _player.Interaction.OnStartHighlithing -= OnPlayerStartedInteraction;
 
             _controller.OnEscapePressed -= OnEscapePressed;
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse2) && _player.IsDead == false)
+            {
+                //temporary, i think
+                if (_isPhotosAlbumOpen == true && Cursor.lockState == CursorLockMode.Locked)
+                    _player.Camera.UnlockCursor();
+                else
+                    _player.Camera.LockCursor();
+            }
         }
 
         private void OnPlayerStartedInteraction(string tooltip, bool isActive)
@@ -64,6 +79,19 @@ namespace LOK1game
         public void EnableHiddenText(int idPhoto)
         {
             _notebook.EnableHiddenText(idPhoto);
+        }
+
+        private void OnPhotosAlbumOpen()
+        {
+            if (_player.IsDead == true)
+                return;
+
+            _isPhotosAlbumOpen = !_isPhotosAlbumOpen;
+
+            if (_isPhotosAlbumOpen)
+                _notebook.View.Show();
+            else
+                _notebook.View.Hide();
         }
     }
 }

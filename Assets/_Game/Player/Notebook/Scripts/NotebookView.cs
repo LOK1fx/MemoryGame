@@ -4,10 +4,26 @@ using UnityEngine;
 using UnityEngine.UI;
 public class NotebookView : MonoBehaviour
 {
+    [SerializeField] private CanvasGroup _canvas;
     [SerializeField] private GameObject _prefabPhotoItem;
     [SerializeField] private Transform _contentPhotos;
 
     private Dictionary<PhotoConfig, PhotoItem> _photoItems = new Dictionary<PhotoConfig, PhotoItem>();
+
+    public void Show()
+    {
+        _canvas.alpha = 1f;
+        _canvas.interactable = true;
+        _canvas.blocksRaycasts = true;
+    }
+
+    public void Hide()
+    {
+        _canvas.alpha = 0f;
+        _canvas.interactable = false;
+        _canvas.blocksRaycasts = false;
+    }
+
     public void SpawnNote(PhotoConfig photoConfig)
     {
         AddedCall(_contentPhotos);
