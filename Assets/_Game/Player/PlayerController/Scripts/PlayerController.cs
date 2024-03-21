@@ -6,6 +6,7 @@ namespace LOK1game
     public class PlayerController : Controller
     {
         public event Action OnEscapePressed;
+        public event Action OnPhotosAlbumPressed;
 
         private bool _inPauseMenu;
 
@@ -25,6 +26,11 @@ namespace LOK1game
                 _inPauseMenu = !_inPauseMenu;
 
                 OnEscapePressed?.Invoke();
+            }
+
+            if ((Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.H)) && _inPauseMenu == false)
+            {
+                OnPhotosAlbumPressed?.Invoke();
             }
         }
     }
