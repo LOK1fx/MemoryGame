@@ -60,5 +60,10 @@ namespace LOK1game
             else
                 _player.Camera.LockCursor();
         }
+
+        public void EnableHiddenText(int idPhoto)
+        {
+            _notebook.EnableHiddenText(idPhoto);
+        }
     }
 }
