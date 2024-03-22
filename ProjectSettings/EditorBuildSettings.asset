@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/_Game/Scenes/Labirint01_ThePast.unity
     guid: f2a62d8a0e071814b95d601f253937bb
   - enabled: 1
-    path: Assets/_Game/Scenes/Midlmm/RoomButtons.unity
+    path: Assets/_Game/Scenes/Midlmm/RoomButtons/RoomButtons.unity
     guid: b392d0e3949c8a847af0a5d54949cbcc
   - enabled: 1
     path: Assets/_Game/Scenes/Labirint01_01.unity
@@ -30,10 +30,10 @@ EditorBuildSettings:
     path: Assets/_Game/Scenes/Labirint01_02.unity
     guid: c5121fe801ff1a14b9ecb1e3e04a7183
   - enabled: 1
-    path: Assets/_Game/Scenes/Midlmm/RoomButtons_TheFuture.unity
+    path: Assets/_Game/Scenes/Midlmm/RoomButtons/RoomButtons_TheFuture.unity
     guid: bc8b069433d47f143a06bba19041374f
   - enabled: 1
-    path: Assets/_Game/Scenes/Midlmm/RoomButtons_ThePast.unity
+    path: Assets/_Game/Scenes/Midlmm/RoomButtons/RoomButtons_ThePast.unity
     guid: c9f894cdd0ccdef459e6e51246c0803d
   - enabled: 1
     path: Assets/_Game/Scenes/WakeUp_Core.unity
