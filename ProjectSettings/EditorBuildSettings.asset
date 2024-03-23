@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Scenes/Midlmm/RoomButtons/RoomButtons_01.unity
     guid: 167e07c4d40501c48a2b771623537a6c
+  - enabled: 1
+    path: Assets/_Game/Scenes/Midlmm/EntranceToMine/EntranceToMine.unity
+    guid: 4fba2a85d2bb6a4479270e7afa325571
   m_configObjects: {}
