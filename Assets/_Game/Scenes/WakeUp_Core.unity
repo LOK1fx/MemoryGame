@@ -539,7 +539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.16
       objectReference: {fileID: 0}
     - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -547,23 +547,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.25
+      value: 15.33
       objectReference: {fileID: 0}
     - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.97679937
       objectReference: {fileID: 0}
     - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.21415654
       objectReference: {fileID: 0}
     - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -571,7 +571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 24.732
       objectReference: {fileID: 0}
     - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -579,10 +579,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
       propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
       propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
@@ -590,7 +594,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 299908790}
     - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 299908791}
+    - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
       propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
@@ -598,11 +610,23 @@ PrefabInstance:
       value: Remember
       objectReference: {fileID: 0}
     - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Load
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
       propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: LOK1game.RememberLevel, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: LOK1game.LevelLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
       propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2293040328772352527, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
@@ -629,6 +653,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _level: 0
+--- !u!114 &299908791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299908789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11cc0e95a381d224197cbe8c68553329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelsToLoad:
+  - WakeUp_02
+  _levelsToUnload: []
 --- !u!1001 &304347354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2910,7 +2949,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1606170
+  m_Name: pb_Mesh572346
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3837,7 +3876,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 27
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 400
   MaxDistance: 500
@@ -4584,7 +4623,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelsToLoad:
   - WakeUp_01
-  - WakeUp_02
 --- !u!1 &1929512586
 GameObject:
   m_ObjectHideFlags: 3

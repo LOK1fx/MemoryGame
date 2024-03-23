@@ -22,15 +22,22 @@ namespace LOK1game
             _player = player;
         }
 
+        private void Start()
+        {
+            _photocamera.TurnOffPreview();
+        }
+
         public void OnInput(object sender)
         {
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
+                _photocamera.TurnOnPreview();
                 _isAiming = true;
                 OnStartCameraAim?.Invoke();
             }
             if (Input.GetKeyUp(KeyCode.Mouse1))
             {
+                _photocamera.TurnOffPreview();
                 _isAiming = false;
                 OnStopCameraAim?.Invoke();
             }

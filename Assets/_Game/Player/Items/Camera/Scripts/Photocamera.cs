@@ -11,6 +11,7 @@ namespace LOK1game
         [SerializeField] private Camera _photoCamera;
         [SerializeField] private Light _flashlight;
         [SerializeField] private Animator _cameraUILightOverlayAnimator;
+        [SerializeField] private GameObject _blackScreen;
 
         [Space]
         [SerializeField] private float _flashlightShowTime = 0.2f;
@@ -20,6 +21,20 @@ namespace LOK1game
         [Space]
         [SerializeField] private int _photoWidth;
         [SerializeField] private int _photoHeigth;
+
+        public void TurnOffPreview()
+        {
+            _blackScreen.SetActive(true);
+            _defaultCamera.Render();
+            _defaultCamera.gameObject.SetActive(false);
+        }
+
+        public void TurnOnPreview()
+        {
+            _defaultCamera.gameObject.SetActive(true);
+            _defaultCamera.Render();
+            _blackScreen.SetActive(false);
+        }
 
         public void TakePhoto(out Texture2D photo, out PointOfInterest pointOfInterest)
         {
