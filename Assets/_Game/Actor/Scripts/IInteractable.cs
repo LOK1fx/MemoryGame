@@ -10,5 +10,6 @@ namespace LOK1game
 
         void OnHighlight(bool isActive);
 
+        string GetTooltip();
     }
 }

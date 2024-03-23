@@ -54,11 +54,11 @@ namespace LOK1game
                 if (_currentInteractable != null)
                 {
                     _currentInteractable.OnHighlight(false);
-                    OnStartHighlithing?.Invoke("Press F to take the document", false);
+                    OnStartHighlithing?.Invoke(_currentInteractable.GetTooltip(), false);
                 }
                 _currentInteractable = interactable;
                 _currentInteractable.OnHighlight(true);
-                OnStartHighlithing?.Invoke("Press F to take the document", true);
+                OnStartHighlithing?.Invoke(_currentInteractable.GetTooltip(), true);
             }
         }
 
@@ -67,7 +67,7 @@ namespace LOK1game
             if (_currentInteractable != null)
             {
                 _currentInteractable.OnHighlight(false);
-                OnStartHighlithing?.Invoke("Press F to take the document", false);
+                OnStartHighlithing?.Invoke(_currentInteractable.GetTooltip(), false);
                 _currentInteractable = null;
             }
         }

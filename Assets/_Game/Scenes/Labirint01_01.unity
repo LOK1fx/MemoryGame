@@ -1642,6 +1642,18 @@ PrefabInstance:
       propertyPath: _note
       value: Strange labyrinth.
       objectReference: {fileID: 0}
+    - target: {fileID: 3693321457569025514, guid: 5bc7418c362ef084e8078b5e55cf1b19, type: 3}
+      propertyPath: _idPhoto
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3693321457569025514, guid: 5bc7418c362ef084e8078b5e55cf1b19, type: 3}
+      propertyPath: _typePhoto
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3693321457569025514, guid: 5bc7418c362ef084e8078b5e55cf1b19, type: 3}
+      propertyPath: _description
+      value: Strange labyrinth.
+      objectReference: {fileID: 0}
     - target: {fileID: 6644472789302175791, guid: 5bc7418c362ef084e8078b5e55cf1b19, type: 3}
       propertyPath: m_RootOrder
       value: 2
