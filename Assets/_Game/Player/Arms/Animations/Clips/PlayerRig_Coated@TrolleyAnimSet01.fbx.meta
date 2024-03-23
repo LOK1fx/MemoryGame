@@ -17,7 +17,13 @@ ModelImporter:
     second: Player_Trolley_Forward
   - first:
       74: -6441409312364628264
-    second: Player_TrolleyRiding
+    second: Player_TrolleyRiding_backward
+  - first:
+      74: -4270010076921722921
+    second: Player_TrolleyRiding_forward
+  - first:
+      74: -6948004061605383150
+    second: Player_TrolleyRiding_forward
   externalObjects: {}
   materials:
     materialImportMode: 0
@@ -135,7 +141,36 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Player_TrolleyRiding
+      name: Player_TrolleyRiding_forward
+      takeName: rig|Trolley_Forward
+      internalID: 0
+      firstFrame: 60
+      lastFrame: 139
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Player_TrolleyRiding_backward
       takeName: rig|Trolley_Backward
       internalID: 0
       firstFrame: 60

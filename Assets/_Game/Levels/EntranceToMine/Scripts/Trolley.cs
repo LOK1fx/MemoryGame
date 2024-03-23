@@ -7,14 +7,19 @@ namespace LOK1game
 {
     public class Trolley : MonoBehaviour, IInteractable
     {
+        [SerializeField] private TrolleyPlayerAnimations _interactionAnimations;
+
         public void OnHighlight(bool isActive)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public void OnInteract(Player.Player sender)
         {
-            throw new System.NotImplementedException();
+            _interactionAnimations.OnStartInteraction();
+
+            sender.Movement.StopMovementInput();
+            sender.Movement.SetAxisInput(Vector2.zero);
         }
 
         public string GetTooltip()
