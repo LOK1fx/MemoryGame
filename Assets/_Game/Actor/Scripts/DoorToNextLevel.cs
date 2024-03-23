@@ -24,7 +24,7 @@ namespace LOK1game
 
             StartCoroutine(LoadNextLevel());
 
-            sender.Camera.LockCursor();
+            sender.Camera.UnlockCursor();
             sender.Movement.Rigidbody.isKinematic = true;
         }
 
