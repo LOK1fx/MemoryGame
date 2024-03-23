@@ -26,6 +26,7 @@ public class TrolleyMovements : MonoBehaviour
         {
             StopTrolley();
         }
+        
     }
 
     public void StopTrolley()
@@ -49,7 +50,7 @@ public class TrolleyMovements : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, pointTransform.position, _currentSpeed * Time.deltaTime);
             yield return null;
         }
-        _trolley.rotation = _point.GetTransform().rotation;
+
         NextPoint();
     }
 
@@ -58,6 +59,7 @@ public class TrolleyMovements : MonoBehaviour
         if (_point.GetPoint() != null)
         {
             _point = _point.GetPoint();
+            transform.LookAt(_point.GetTransform());
             StartTrolley();
         }
         else
