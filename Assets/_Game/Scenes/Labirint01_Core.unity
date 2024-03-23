@@ -143,6 +143,10 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3693321457569025514, guid: 5bc7418c362ef084e8078b5e55cf1b19, type: 3}
+      propertyPath: _typePhoto
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3693321457569025514, guid: 5bc7418c362ef084e8078b5e55cf1b19, type: 3}
       propertyPath: _description
       value: Signs of visit.
       objectReference: {fileID: 0}
@@ -739,6 +743,10 @@ PrefabInstance:
     - target: {fileID: 3693321457569025514, guid: 5bc7418c362ef084e8078b5e55cf1b19, type: 3}
       propertyPath: _idPhoto
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3693321457569025514, guid: 5bc7418c362ef084e8078b5e55cf1b19, type: 3}
+      propertyPath: _typePhoto
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3693321457569025514, guid: 5bc7418c362ef084e8078b5e55cf1b19, type: 3}
       propertyPath: _description
@@ -2575,6 +2583,10 @@ PrefabInstance:
     - target: {fileID: 3693321457569025514, guid: 5bc7418c362ef084e8078b5e55cf1b19, type: 3}
       propertyPath: _idPhoto
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3693321457569025514, guid: 5bc7418c362ef084e8078b5e55cf1b19, type: 3}
+      propertyPath: _typePhoto
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3693321457569025514, guid: 5bc7418c362ef084e8078b5e55cf1b19, type: 3}
       propertyPath: _description
