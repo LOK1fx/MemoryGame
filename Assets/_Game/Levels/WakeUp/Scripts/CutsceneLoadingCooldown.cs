@@ -13,6 +13,11 @@ namespace LOK1game
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
+        private void OnDestroy()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
         private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
         {
             if (arg0.name == "WakeUp_01")

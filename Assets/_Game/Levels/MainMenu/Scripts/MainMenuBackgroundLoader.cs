@@ -35,7 +35,7 @@ namespace LOK1game
             {
                 case ELevelName.None:
                     Load(_defaultBackground);
-                    break;
+                    return;
                 case ELevelName.WakeUp_01:
                     SceneManager.LoadScene("WakeUp_01", LoadSceneMode.Additive);
                     break;
