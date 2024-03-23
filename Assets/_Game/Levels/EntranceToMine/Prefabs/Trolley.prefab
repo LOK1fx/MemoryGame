@@ -137,7 +137,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 50
+    FieldOfView: 47
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 2959762507971411041}
   - component: {fileID: 2959762507971411040}
   - component: {fileID: 1221965246}
+  - component: {fileID: 2997152845849430855}
   m_Layer: 0
   m_Name: Trolley
   m_TagString: Untagged
@@ -266,6 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3abf9180aad87ef42a60c2298543bca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interactionAnimations: {fileID: 2997152845849430855}
 --- !u!114 &2959762507971411040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,6 +296,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.15, y: 1.3, z: 1.84}
   m_Center: {x: 0, y: 0.51, z: -0.3}
+--- !u!114 &2997152845849430855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2959762507971411046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3e442bab84d4c42921d3893628d378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _virtualCamera: {fileID: 3899293090059374042}
+  _playerAnimator: {fileID: 7590403836634479568}
+  _playerRoot: {fileID: 8762284186679649169}
 --- !u!1 &4969630342172014619
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +405,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9118029116102331453}
   - component: {fileID: 4878987971010721865}
+  - component: {fileID: 5417391491520014883}
+  - component: {fileID: 5933126994388113837}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -422,6 +441,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5417391491520014883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6308434294034997117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0.23
+  m_FrequencyGain: 3.47
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!114 &5933126994388113837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6308434294034997117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9beda531928fc40968802117a5d256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RecenterTarget: 0
+  m_VerticalAxis:
+    Value: 0
+    m_SpeedMode: 0
+    m_MaxSpeed: 300
+    m_AccelTime: 0.1
+    m_DecelTime: 0.1
+    m_InputAxisName: Mouse Y
+    m_InputAxisValue: 0
+    m_InvertInput: 1
+    m_MinValue: -30
+    m_MaxValue: 30
+    m_Wrap: 0
+    m_Recentering:
+      m_enabled: 0
+      m_WaitTime: 1
+      m_RecenteringTime: 2
+      m_LegacyHeadingDefinition: -1
+      m_LegacyVelocityFilterStrength: -1
+  m_VerticalRecentering:
+    m_enabled: 1
+    m_WaitTime: 1.2
+    m_RecenteringTime: 2
+    m_LegacyHeadingDefinition: -1
+    m_LegacyVelocityFilterStrength: -1
+  m_HorizontalAxis:
+    Value: 0
+    m_SpeedMode: 0
+    m_MaxSpeed: 300
+    m_AccelTime: 0.1
+    m_DecelTime: 0.1
+    m_InputAxisName: Mouse X
+    m_InputAxisValue: 0
+    m_InvertInput: 0
+    m_MinValue: -30
+    m_MaxValue: 30
+    m_Wrap: 0
+    m_Recentering:
+      m_enabled: 0
+      m_WaitTime: 1
+      m_RecenteringTime: 2
+      m_LegacyHeadingDefinition: -1
+      m_LegacyVelocityFilterStrength: -1
+  m_HorizontalRecentering:
+    m_enabled: 1
+    m_WaitTime: 1.2
+    m_RecenteringTime: 2
+    m_LegacyHeadingDefinition: -1
+    m_LegacyVelocityFilterStrength: -1
+  m_ApplyBeforeBody: 0
 --- !u!1 &9182776742029870157
 GameObject:
   m_ObjectHideFlags: 0

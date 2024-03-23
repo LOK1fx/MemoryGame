@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 namespace LOK1game
 {
     public class TrolleyPlayerAnimations : MonoBehaviour
     {
-        private void Start()
+        [SerializeField] private CinemachineVirtualCamera _virtualCamera;
+        [SerializeField] private Animator _playerAnimator;
+        [SerializeField] private GameObject _playerRoot;
+
+        public void OnStartInteraction()
         {
-
-        }
-
-        private void Update()
-        {
-
+            _playerRoot.SetActive(true);
+            _virtualCamera.Priority = 500;
         }
     }
 }
