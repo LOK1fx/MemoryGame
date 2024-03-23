@@ -41,4 +41,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Scenes/WakeUp_Core.unity
     guid: 848c12a0920ed4f478ceea390a957c6e
+  - enabled: 1
+    path: Assets/_Game/Scenes/WakeUp_01.unity
+    guid: 282fc2a52c79d0c4895aaf5a346cd113
+  - enabled: 1
+    path: Assets/_Game/Scenes/WakeUp_02.unity
+    guid: aa1929c16ecffa544a91bb1f5d3c3949
   m_configObjects: {}
