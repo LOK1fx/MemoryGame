@@ -40,5 +40,10 @@ namespace LOK1game
         {
             _outline.enabled = isActive;
         }
+
+        public string GetTooltip()
+        {
+            return "Press F to take the document";
+        }
     }
 }
