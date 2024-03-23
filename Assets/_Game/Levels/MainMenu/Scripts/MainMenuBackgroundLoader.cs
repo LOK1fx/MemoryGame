@@ -21,9 +21,12 @@ namespace LOK1game
         [SerializeField] private GameObject _roomButtonLevel;
         [SerializeField] private GameObject _labirintLevel;
 
-        private void Awake()
+        private void Start()
         {
-            Load(_defaultBackground);
+            if (MenuBackgroundRemember.Instance != null)
+                Load(MenuBackgroundRemember.Instance.GetLevel());
+            else
+                Load(_defaultBackground);
         }
 
         private void Load(ELevelName level)
@@ -31,6 +34,7 @@ namespace LOK1game
             switch (level)
             {
                 case ELevelName.None:
+                    Load(_defaultBackground);
                     break;
                 case ELevelName.WakeUp_01:
                     SceneManager.LoadScene("WakeUp_01", LoadSceneMode.Additive);
@@ -53,6 +57,7 @@ namespace LOK1game
             switch (level)
             {
                 case ELevelName.None:
+                    _defaultLevel.SetActive(true);
                     break;
                 case ELevelName.WakeUp_01:
                     _wakeupLevel.SetActive(true);

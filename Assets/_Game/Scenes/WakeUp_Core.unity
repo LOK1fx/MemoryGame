@@ -21,7 +21,7 @@ RenderSettings:
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0, g: 0.13739333, b: 0.29280546, a: 1}
-  m_AmbientEquatorColor: {r: 0.4200375, g: 0.4345216, b: 0.49728578, a: 1}
+  m_AmbientEquatorColor: {r: 0.681655, g: 0.7071374, b: 0.8090671, a: 1}
   m_AmbientGroundColor: {r: 0.31132078, g: 0.20754719, b: 0, a: 1}
   m_AmbientIntensity: 1.09
   m_AmbientMode: 1
@@ -518,6 +518,117 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 8655584709355810674, guid: fd411016d9a6a4b4290d1ce99db37323, type: 3}
   m_PrefabInstance: {fileID: 279201932}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &299908788
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 28.639
+      objectReference: {fileID: 0}
+    - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 11.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192358106648984040, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 299908790}
+    - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Remember
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LOK1game.RememberLevel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429433805647240337, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2293040328772352527, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+      propertyPath: m_Name
+      value: Trigger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+--- !u!1 &299908789 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2293040328772352527, guid: d73ce3a4d3bc22c438161b33412fefc9, type: 3}
+  m_PrefabInstance: {fileID: 299908788}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &299908790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299908789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba796361ba3bc45419fc64586170c465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _level: 0
 --- !u!1001 &304347354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4457,7 +4568,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1823073751
 MonoBehaviour:
