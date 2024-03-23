@@ -4,7 +4,6 @@ using UnityEngine;
 using System;
 public class PointTrolley : MonoBehaviour
 {
-    public bool IsTurn;
     public Action OnSetPoint;
     public PointTrolley Path => _currentPath;
 
