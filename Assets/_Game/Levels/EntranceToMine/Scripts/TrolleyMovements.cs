@@ -3,21 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 public class TrolleyMovements : MonoBehaviour
 {
-    [SerializeField] private PointTrolley _point;
+    [SerializeField] private GameObject _startPoint;
     [SerializeField] private float _speed = 2;
 
+    private IPointPath _point;
     private float _currentSpeed;
 
     private void Start()
     {
-        StopTrolley();
+        _point = _startPoint.GetComponent<IPointPath>();
+        StartTrolley();
     }
 
     private IEnumerator MoveToTarget()
     {
-        while (Vector3.Distance(transform.position, _point.transform.position) > float.Epsilon)
+        Transform pointTransform = _point.GetTransform();
+
+        while (Vector3.Distance(transform.position, pointTransform.position) > float.Epsilon)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _point.transform.position, _currentSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, pointTransform.position, _currentSpeed * Time.deltaTime);
             yield return null;
         }
         NextPoint();
@@ -25,19 +29,15 @@ public class TrolleyMovements : MonoBehaviour
 
     private void NextPoint()
     {
-        if(_point.Path == null)
+        if(_point.GetPoint() != null)
         {
-            _point.OnSetPoint += SetPoint;
+            _point = _point.GetPoint();
+            StartTrolley();
         }
         else
         {
-            _point = _point.Path;
+            StopTrolley();
         }
-    }
-
-    private void SetPoint()
-    {
-        _point = _point.Path;
     }
 
     public void StopTrolley()
@@ -47,16 +47,9 @@ public class TrolleyMovements : MonoBehaviour
 
     public void StartTrolley()
     {
-        if (_point != null)
-        {
-            StopAllCoroutines();
-            StartCoroutine(MoveToTarget());
-            _currentSpeed = _speed;
-        }
-        else
-        {
-            StopTrolley();
-        }
+        StopAllCoroutines();
+        StartCoroutine(MoveToTarget());
+        _currentSpeed = _speed;
     }
 
     private void Update()
