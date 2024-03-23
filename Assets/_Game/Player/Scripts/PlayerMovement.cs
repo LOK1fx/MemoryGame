@@ -17,6 +17,7 @@ namespace LOK1game.Player
 
         #endregion
 
+        public bool CanMove { get; private set; } = true;
         public Vector3 ActualMoveDirection { get; private set; }
         public float FallSpeed { get; private set; }
         public Rigidbody Rigidbody { get; private set; }
@@ -104,6 +105,9 @@ namespace LOK1game.Player
 
         public void SetAxisInput(Vector2 input)
         {
+            if (CanMove == false)
+                return;
+
             _iAxis = input;
         }
 
@@ -187,6 +191,16 @@ namespace LOK1game.Player
             PlayerCollider.center = Vector3.up;
 
             OnStopCrouch?.Invoke();
+        }
+
+        public void StopMovementInput()
+        {
+            CanMove = false;
+        }
+
+        public void StartMovementInput()
+        {
+            CanMove = true;
         }
 
         public bool CanStand()
