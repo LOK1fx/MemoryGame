@@ -3050,7 +3050,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh691272
+  m_Name: pb_Mesh719568
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3262,6 +3262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1507071423}
   - component: {fileID: 1507071424}
+  - component: {fileID: 1507071425}
   m_Layer: 0
   m_Name: Cutscene
   m_TagString: Untagged
@@ -3301,10 +3302,10 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: f69825cae0be56c41a9e9bdb026b91bc, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
-  m_InitialTime: 0
+  m_InitialTime: -0.10000000149011612
   m_SceneBindings:
   - key: {fileID: 7477959906626482226, guid: f69825cae0be56c41a9e9bdb026b91bc, type: 2}
     value: {fileID: 207391287}
@@ -3353,6 +3354,19 @@ PlayableDirector:
     - fcebab48253c055409d8ef37f54e012d: {fileID: 1279463268}
     - cab68f86140a8ab46898d63a6c6f133a: {fileID: 1598389554}
     - 55032773c3e214c459b119d3464b9e8d: {fileID: 1279463268}
+--- !u!114 &1507071425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507071422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b54e7e426fb4747ad0a9cf6cf2a406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _director: {fileID: 1507071424}
 --- !u!1 &1570946647
 GameObject:
   m_ObjectHideFlags: 0
