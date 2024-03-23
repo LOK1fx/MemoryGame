@@ -21,7 +21,7 @@ namespace LOK1game
                 ControlledPawn?.OnInput(this);
 
             //Right alt for editor tests
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.RightAlt))
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.LeftAlt))
             {
                 _inPauseMenu = !_inPauseMenu;
 
