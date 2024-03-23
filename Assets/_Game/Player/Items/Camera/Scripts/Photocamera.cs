@@ -12,6 +12,8 @@ namespace LOK1game
         [SerializeField] private Light _flashlight;
         [SerializeField] private Animator _cameraUILightOverlayAnimator;
         [SerializeField] private GameObject _blackScreen;
+        [SerializeField] private AudioSource _audioSource;
+        [SerializeField] private AudioClip _photoClip;
 
         [Space]
         [SerializeField] private float _flashlightShowTime = 0.2f;
@@ -76,6 +78,8 @@ namespace LOK1game
             _cameraUILightOverlayAnimator.Play("PhotocameraUI_TakePhoto");
 
             TryGetInterestPoint(out pointOfInterest);
+
+            _audioSource.PlayOneShot(_photoClip);
         }
 
         private bool TryGetInterestPoint(out PointOfInterest pointOfInterest)

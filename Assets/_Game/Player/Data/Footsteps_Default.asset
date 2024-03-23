@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c6a214e1bf0da4eaefd3a303d70087, type: 3}
+  m_Name: Footsteps_Default
+  m_EditorClassIdentifier: 
+  _terrainLayerName: None
+  _footstepPrefab: {fileID: 6994607100717941944, guid: beaef345b9498384780bc42bf25eb110, type: 3}
+  _footstepsClips:
+  - {fileID: 8300000, guid: 4f31d0f36d183a74fb0be20709a477ea, type: 3}
+  - {fileID: 8300000, guid: 8da89a1f8c9489441a8a55808d87324f, type: 3}
+  - {fileID: 8300000, guid: 1659ba2217f89cf44931dab49e6dd6e9, type: 3}
+  - {fileID: 8300000, guid: 9ed43c15708a33e4fb735a0e9a41a53e, type: 3}
+  - {fileID: 8300000, guid: 37d8174c77fbc084d9fe393975df9b20, type: 3}
+  - {fileID: 8300000, guid: aa437c6b2903e844e84f561b67ecb867, type: 3}
+  - {fileID: 8300000, guid: 800b72b3259a7b549868ac4426baad76, type: 3}
+  - {fileID: 8300000, guid: 18342d9c047fe574e84e64b9084004da, type: 3}
+  - {fileID: 8300000, guid: c1ddd41e0bcfd144c9d50208cc44af65, type: 3}
+  _jumpClip: {fileID: 8300000, guid: ea8ccf2656634814b9b04243254a5b93, type: 3}
+  _landClip: {fileID: 8300000, guid: 84a7adc8cd20ce34da5fa74bf0e278b3, type: 3}

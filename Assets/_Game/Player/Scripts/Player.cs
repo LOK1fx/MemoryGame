@@ -104,8 +104,8 @@ namespace LOK1game.Player
 
         private void OnLand()
         {
-            Camera.AddCameraOffset(Vector3.down * 0.5f);
-            Camera.TriggerRecoil(new Vector3(-1f, 0f, 1f));
+            Camera.AddCameraOffset(Vector3.down * 0.4f);
+            Camera.TriggerRecoil(new Vector3(-2f, 0f, 1.5f));
         }
 
         private void OnJump()

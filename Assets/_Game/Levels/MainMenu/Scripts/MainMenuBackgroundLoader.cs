@@ -41,6 +41,7 @@ namespace LOK1game
                     break;
                 case ELevelName.RoomsButton:
                     SceneManager.LoadScene("RoomButtons_01", LoadSceneMode.Additive);
+                    SceneManager.LoadScene("RoomButtons_ThePast", LoadSceneMode.Additive);
                     break;
                 case ELevelName.Labirint01_03:
                     SceneManager.LoadScene("Labirint01_03", LoadSceneMode.Additive);

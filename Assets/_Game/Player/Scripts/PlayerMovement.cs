@@ -18,6 +18,7 @@ namespace LOK1game.Player
         #endregion
 
         public Vector3 ActualMoveDirection { get; private set; }
+        public float FallSpeed { get; private set; }
         public Rigidbody Rigidbody { get; private set; }
         public CapsuleCollider PlayerCollider { get; private set; }
 
@@ -65,6 +66,8 @@ namespace LOK1game.Player
         {
             UpdateCooldowns();
 
+            FallSpeed = Rigidbody.velocity.y;
+
             if (_playerState.IsSliding && _playerState.OnGround)
             {
                 _currentSlideTime += Time.deltaTime;
@@ -108,11 +111,6 @@ namespace LOK1game.Player
         {
             if (!_playerState.InTransport)
             {
-                if (_playerState.OnGround && Rigidbody.velocity.y <= -4f)
-                {
-                    Land();
-                }
-
                 Vector3 velocity;
 
                 var moveParams = new CharacterMath.MoveParams(GetDirection(_iAxis), Rigidbody.velocity);
@@ -245,6 +243,14 @@ namespace LOK1game.Player
             else
             {
                 return false;
+            }
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (_playerState.OnGround && FallSpeed <= -5f)
+            {
+                Land();
             }
         }
 

@@ -169,6 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelsToLoad:
   - RoomButtons_01
+  - RoomButtons_TheFuture
 --- !u!1 &822535312
 GameObject:
   m_ObjectHideFlags: 0
