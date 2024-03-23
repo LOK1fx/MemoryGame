@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class TrolleyMovements : MonoBehaviour
 {
+    [SerializeField] private Transform _trolley;
     [SerializeField] private GameObject _startPoint;
     [SerializeField] private float _speed = 2;
 
@@ -15,26 +16,13 @@ public class TrolleyMovements : MonoBehaviour
         StartTrolley();
     }
 
-    private IEnumerator MoveToTarget()
+    private void Update()
     {
-        Transform pointTransform = _point.GetTransform();
-
-        while (Vector3.Distance(transform.position, pointTransform.position) > float.Epsilon)
+        if (Input.GetKeyDown(KeyCode.T))
         {
-            transform.position = Vector3.MoveTowards(transform.position, pointTransform.position, _currentSpeed * Time.deltaTime);
-            yield return null;
-        }
-        NextPoint();
-    }
-
-    private void NextPoint()
-    {
-        if(_point.GetPoint() != null)
-        {
-            _point = _point.GetPoint();
             StartTrolley();
         }
-        else
+        if (Input.GetKeyDown(KeyCode.Y))
         {
             StopTrolley();
         }
@@ -52,13 +40,27 @@ public class TrolleyMovements : MonoBehaviour
         _currentSpeed = _speed;
     }
 
-    private void Update()
+    private IEnumerator MoveToTarget()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        Transform pointTransform = _point.GetTransform();
+
+        while (Vector3.Distance(transform.position, pointTransform.position) > float.Epsilon)
         {
+            transform.position = Vector3.MoveTowards(transform.position, pointTransform.position, _currentSpeed * Time.deltaTime);
+            yield return null;
+        }
+        _trolley.rotation = _point.GetTransform().rotation;
+        NextPoint();
+    }
+
+    private void NextPoint()
+    {
+        if (_point.GetPoint() != null)
+        {
+            _point = _point.GetPoint();
             StartTrolley();
         }
-        if (Input.GetKeyDown(KeyCode.Y))
+        else
         {
             StopTrolley();
         }
