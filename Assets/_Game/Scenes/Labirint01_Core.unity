@@ -458,6 +458,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6908261692811240468, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
+      propertyPath: _info.Note
+      value: It's a great day. Maybe we should get together here more often. Come
+        next Saturday, we'll have a blast!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908261692811240468, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
+      propertyPath: _info.DocName
+      value: ----
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
 --- !u!1001 &517471805
