@@ -1,7 +1,5 @@
-using System.Collections;
 using UnityEngine;
 using System;
-using Cinemachine;
 using System.Collections.Generic;
 
 namespace LOK1game.Player
@@ -148,9 +146,12 @@ namespace LOK1game.Player
             Movement.SetAxisInput(Vector2.zero);
 
             Movement.Rigidbody.useGravity = false;
+            Movement.Rigidbody.interpolation = RigidbodyInterpolation.None;
+            Movement.Rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
 
             Movement.Rigidbody.isKinematic = true;
             Movement.Rigidbody.velocity = Vector3.zero;
+
             Movement.PlayerCollider.enabled = false;
             State.SetInTransport(true);
         }
@@ -161,6 +162,8 @@ namespace LOK1game.Player
             Movement.SetAxisInput(Vector2.zero);
 
             Movement.Rigidbody.useGravity = true;
+            Movement.Rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
+            Movement.Rigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
 
             Movement.Rigidbody.isKinematic = false;
             State.SetInTransport(false);
@@ -227,14 +230,6 @@ namespace LOK1game.Player
                 Camera.UnlockCursor();
 
                 //photonView.RPC(nameof(Respawn), RpcTarget.All, new object[3] { respawnPosition.x, respawnPosition.y, respawnPosition.z });
-            }
-        }
-
-        private void OnCollisionEnter(Collision collision)
-        {
-            if(Movement.GetSpeed() > 8f)
-            {
-                Health.ReduceHealth(Health.MaxHp);
             }
         }
 

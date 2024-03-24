@@ -33,6 +33,7 @@ namespace LOK1game
 
                 sender.transform.SetParent(_actualPlayerPositionInTransport);
                 sender.transform.localPosition = Vector3.zero;
+                sender.Movement.Rigidbody.position = _actualPlayerPositionInTransport.position;
 
                 ReparentedScalesCorrect(sender);
 
@@ -49,6 +50,7 @@ namespace LOK1game
 
                 sender.transform.SetParent(null);
                 sender.transform.position = _playerBackPositionTransform.position;
+                sender.Movement.Rigidbody.position = _playerBackPositionTransform.position;
 
                 ReparentedScalesCorrect(sender);
 
