@@ -19,6 +19,7 @@ namespace LOK1game.UI
         private PlayerController _controller;
 
         private bool _isPhotosAlbumOpen;
+        private bool _isDocumentsOpen;
 
         public void Bind(Player.Player player, PlayerController controller)
         {
@@ -34,6 +35,7 @@ namespace LOK1game.UI
 
             _controller.OnEscapePressed += OnEscapePressed;
             _controller.OnPhotosAlbumPressed += OnPhotosAlbumOpen;
+            _controller.OnDocumentsPressed += OnDocumentOpen;
         }
 
         private void OnDestroy()
@@ -44,6 +46,8 @@ namespace LOK1game.UI
             _player.OnTakeDocument -= OnPlayerTakeDocument;
 
             _controller.OnEscapePressed -= OnEscapePressed;
+            _controller.OnPhotosAlbumPressed -= OnPhotosAlbumOpen;
+            _controller.OnDocumentsPressed -= OnDocumentOpen;
         }
 
         private void Update()
@@ -70,6 +74,7 @@ namespace LOK1game.UI
         {
             _noteNotification.Show($"<b><color=yellow>{doc.DocName}</color></b> " +
                 $"added to inventory. Press N", Color.yellow);
+            _notebook.SetDocInfo(doc);
         }
 
         private void OnPlayerStartedInteraction(string tooltip, bool isActive)
@@ -101,15 +106,28 @@ namespace LOK1game.UI
 
         private void OnPhotosAlbumOpen()
         {
-            if (_player.IsDead == true)
-                return;
+            if (_player.IsDead == true) return;
+
+            _isDocumentsOpen = false;
+            _notebook.IsActiveDocumentsView(_isDocumentsOpen);
 
             _isPhotosAlbumOpen = !_isPhotosAlbumOpen;
 
-            if (_isPhotosAlbumOpen)
-                _notebook.View.Show();
-            else
-                _notebook.View.Hide();
+            _notebook.IsActivePhotosView(_isPhotosAlbumOpen);
+            
+        }
+
+        private void OnDocumentOpen()
+        {
+            if (_player.IsDead == true) return;
+
+            _isPhotosAlbumOpen = false;
+            _notebook.IsActivePhotosView(_isPhotosAlbumOpen);
+
+            _isDocumentsOpen = !_isDocumentsOpen;
+
+            _notebook.IsActiveDocumentsView(_isDocumentsOpen);
+            
         }
     }
 }

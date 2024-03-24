@@ -6,11 +6,13 @@ namespace LOK1game
 {
     public class Notebook : MonoBehaviour
     {
-        public NotebookView View => _notebookView;
-
+        [SerializeField] private PhotosView _photosView;
+        [SerializeField] private DocumentsView _documentsView;
         [SerializeField] private NotebookView _notebookView;
 
         private List<PhotoConfig> _photos = new List<PhotoConfig>();
+        private DocInfo _currentDocInfo;
+
         private Player.Player _player;
 
         private ETypePhoto _typePhoto;
@@ -25,18 +27,18 @@ namespace LOK1game
         {
             _photos.Add(noteConfig);
             if (noteConfig.TypePhoto != _typePhoto) return;
-            _notebookView.SpawnNote(noteConfig);
+            _photosView.SpawnNote(noteConfig);
         }
 
         public void SpawnAllPhoto()
         {
-            _notebookView.ClearChildren();
-            _notebookView.ClearAllCall();
+            _photosView.ClearChildren();
+            _photosView.ClearAllCall();
             foreach (var item in _photos)
             {
                 if(item.TypePhoto == _typePhoto)
                 {
-                    _notebookView.SpawnNote(item);
+                    _photosView.SpawnNote(item);
                 }
             }
         }
@@ -47,7 +49,7 @@ namespace LOK1game
             {
                 if (item.TypePhoto == ETypePhoto.Important && item.IdPhoto == id)
                 {
-                    _notebookView.EnableHiddenText(item);
+                    _photosView.EnableHiddenText(item);
                 }
             }
         }
@@ -56,6 +58,41 @@ namespace LOK1game
         {
             _typePhoto = (ETypePhoto)index;
             SpawnAllPhoto();
+        }
+
+        public void SetDocInfo(DocInfo docInfo)
+        {
+            _currentDocInfo = docInfo;
+        }
+
+        public void IsActivePhotosView(bool isActive)
+        {
+
+            if (isActive)
+            {
+                _photosView.Show();
+                _notebookView.Show();
+            }
+            else
+            {
+                _photosView.Hide();
+                _notebookView.Hide();
+            }
+        }
+
+        public void IsActiveDocumentsView(bool isActive)
+        {
+            if (isActive)
+            {
+                _documentsView.Show();
+                _notebookView.Show();
+            }
+            else
+            {
+                _documentsView.Hide();
+                _notebookView.Hide();
+            }
+            _documentsView.DisplayDocument(_currentDocInfo);
         }
 
 

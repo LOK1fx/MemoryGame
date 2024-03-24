@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/_Game/Scenes/LOK1/LOK1_proto.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/_Game/Scenes/Midlmm/EntranceToMine/EntranceToMine_background.unity
-    guid: 2b77585b78f460f48b9aa5f4810437d3
-  - enabled: 1
     path: Assets/_Game/Scenes/Labirint01.unity
     guid: ae21c31f6e8a9b947a39ed49684aeb42
   - enabled: 1
@@ -56,6 +53,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Scenes/Midlmm/EntranceToMine/EntranceToMine.unity
     guid: 4fba2a85d2bb6a4479270e7afa325571
+  - enabled: 1
+    path: Assets/_Game/Scenes/Midlmm/EntranceToMine/EntranceToMine_background.unity
+    guid: 2b77585b78f460f48b9aa5f4810437d3
+  - enabled: 1
+    path: Assets/_Game/Scenes/Midlmm/EntranceToMine/EntranceToMine_ThePast.unity
+    guid: 061513589a3627a439560e3c91190044
+  - enabled: 1
+    path: Assets/_Game/Scenes/Midlmm/EntranceToMine/EntranceToMine_TheFuture.unity
+    guid: fb529760b31a3d344932cf01489c3b82
   - enabled: 1
     path: Assets/_Game/Scenes/Shore_Core.unity
     guid: d6c296c2833b05a4c9915e4ad6380f0a
