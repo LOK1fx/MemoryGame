@@ -64,16 +64,32 @@ namespace LOK1game.UI
 
         private void OnPlayerPhotoTaken(PhotoConfig config)
         {
-            if (config.TypePhoto == ETypePhoto.Important || config.TypePhoto == ETypePhoto.Noted)
+            var color = Color.white;
+            var photoTypeDescription = "";
+
+            if (config.TypePhoto == ETypePhoto.Important)
             {
-                _noteNotification.Show("Importnant photo added to notes. Press Tab or H", Color.red);
-            }
+                color = Color.red;
+                photoTypeDescription = "Importnant";
+            }  
+            else if (config.TypePhoto == ETypePhoto.Noted)
+            {
+                color = Color.cyan;
+                photoTypeDescription = "Vivid";
+            } 
+            else
+            {
+                return;
+            }  
+
+            _noteNotification.Show($"{photoTypeDescription} photo added to notes. Press Tab or H", color);
         }
 
         private void OnPlayerTakeDocument(DocInfo doc)
         {
             _noteNotification.Show($"<b><color=yellow>{doc.DocName}</color></b> " +
                 $"added to inventory. Press N", Color.yellow);
+
             _notebook.SetDocInfo(doc);
         }
 
