@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using System;
 using Cinemachine;
+using System.Collections.Generic;
 
 namespace LOK1game.Player
 {
@@ -25,6 +26,7 @@ namespace LOK1game.Player
 
         [SerializeField] private FirstPersonArms _firstPersonArms;
         [SerializeField] private Vector3 _crouchEyePosition;
+        [SerializeField] private List<Renderer> _visuals;
 
         private Vector3 _defaultEyePosition;
 
@@ -132,6 +134,48 @@ namespace LOK1game.Player
 
             RemoveHealth(damage.Value);
             TakeDamageReplacatedEffects();
+        }
+
+        public void PassIntroTransport()
+        {
+            Movement.StopMovementInput();
+            Movement.SetAxisInput(Vector2.zero);
+
+            Movement.Rigidbody.useGravity = false;
+
+            Movement.Rigidbody.isKinematic = true;
+            Movement.Rigidbody.velocity = Vector3.zero;
+            Movement.PlayerCollider.enabled = false;
+            State.SetInTransport(true);
+        }
+
+        public void DepassFromTransport()
+        {
+            Movement.StartMovementInput();
+            Movement.SetAxisInput(Vector2.zero);
+
+            Movement.Rigidbody.useGravity = true;
+
+            Movement.Rigidbody.isKinematic = false;
+            State.SetInTransport(false);
+            Movement.PlayerCollider.enabled = true;
+            Movement.Rigidbody.velocity = Vector3.zero;
+        }
+
+        public void HideVisuals()
+        {
+            foreach (var visual in _visuals)
+            {
+                visual.enabled = false;
+            }
+        }
+
+        public void ShowVisuals()
+        {
+            foreach (var visual in _visuals)
+            {
+                visual.enabled = true;
+            }
         }
 
         private void TakeDamageReplacatedEffects()

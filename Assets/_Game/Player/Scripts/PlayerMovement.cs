@@ -262,7 +262,7 @@ namespace LOK1game.Player
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (_playerState.OnGround && FallSpeed <= -5f)
+            if (_playerState.OnGround && FallSpeed <= -5f && _playerState.InTransport == false)
             {
                 Land();
             }

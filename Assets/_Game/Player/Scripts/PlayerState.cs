@@ -27,6 +27,13 @@ namespace LOK1game.Player
             _playerMovement.OnStopCrouch += OnStopCrouching;
         }
 
+        private void OnDestroy()
+        {
+            _playerMovement.OnStartCrouch -= () => IsCrouching = true;
+            _playerMovement.OnStartSlide -= () => IsSliding = true;
+            _playerMovement.OnStopCrouch -= OnStopCrouching;
+        }
+
         private void FixedUpdate()
         {
             var center = transform.position + _groundCheckerPosition;
@@ -39,6 +46,11 @@ namespace LOK1game.Player
             {
                 OnGround = false;
             }
+        }
+
+        public void SetInTransport(bool value)
+        {
+            InTransport = value;
         }
 
         public bool IsMoving()

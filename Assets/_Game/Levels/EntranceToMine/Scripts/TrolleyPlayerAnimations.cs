@@ -16,5 +16,11 @@ namespace LOK1game
             _playerRoot.SetActive(true);
             _virtualCamera.Priority = 500;
         }
+
+        public void OnExitTrolley()
+        {
+            _virtualCamera.Priority = 0;
+            _playerRoot.SetActive(false);
+        }
     }
 }

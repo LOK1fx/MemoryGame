@@ -13,6 +13,8 @@ namespace LOK1game
 
         [SerializeField] private Photocamera _photocamera;
 
+        public bool IsInputProcessing { get; set; } = true;
+
         private Player.Player _player;
 
         private bool _isAiming;
@@ -27,8 +29,21 @@ namespace LOK1game
             _photocamera.TurnOffPreview();
         }
 
+        public void StartInput(object sender)
+        {
+            IsInputProcessing = true;
+        }
+
+        public void StopInput(object sender)
+        {
+            IsInputProcessing = false;
+        }
+
         public void OnInput(object sender)
         {
+            if (IsInputProcessing == false)
+                return;
+
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 _photocamera.TurnOnPreview();

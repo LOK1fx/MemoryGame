@@ -17,9 +17,15 @@ namespace LOK1game.Player
         [SerializeField] private float _maxRightViewAngle = 30f;
         [SerializeField] private float _maxLeftViewAngle = 30f;
 
+        private float _defaultMaxRightViewAngle;
+        private float _defaultMaxLeftViewAngle;
+
         [Space]
         [SerializeField] private float _maxUpViewAngle = 15f;
         [SerializeField] private float _maxDownViewAngle = 15f;
+
+        private float _defaultMaxUpViewAngle;
+        private float _defaultMaxDownViewAngle;
 
         [Space]
         [SerializeField] private float _defaultFov = 65f;
@@ -64,6 +70,11 @@ namespace LOK1game.Player
         private void Start()
         {
             DesiredPosition = _cameraTransform.localPosition;
+
+            _defaultMaxRightViewAngle = _maxRightViewAngle;
+            _defaultMaxLeftViewAngle = _maxLeftViewAngle;
+            _defaultMaxUpViewAngle = _maxUpViewAngle;
+            _defaultMaxDownViewAngle = _maxDownViewAngle;
         }
 
         private void Update()
@@ -92,6 +103,24 @@ namespace LOK1game.Player
             _recoilCameraRotation = Vector3.Lerp(_recoilCameraRotation, Vector3.zero, _recoilCameraReturnSpeed * Time.deltaTime);
             _currentRecoilCameraRotation = Vector3.Slerp(_currentRecoilCameraRotation, _recoilCameraRotation, _recoilCameraRotationSpeed * Time.fixedDeltaTime);
             _recoilCamera.localRotation = Quaternion.Euler(_currentRecoilCameraRotation);
+        }
+
+        public void LimitViewAngles(float maxHorizontal, float maxVertical)
+        {
+            LimitViewAngles(maxHorizontal, maxHorizontal, maxVertical, maxVertical);
+        }
+
+        public void LimitViewAngles(float maxRight, float maxLeft, float maxUp, float maxDown)
+        {
+            _maxRightViewAngle = maxRight;
+            _maxLeftViewAngle = maxLeft;
+            _maxUpViewAngle = maxUp;
+            _maxDownViewAngle = maxDown;
+        }
+
+        public void SetDefaultViewAngles()
+        {
+            LimitViewAngles(_defaultMaxRightViewAngle, _defaultMaxUpViewAngle);
         }
 
         public void LockCursor()
