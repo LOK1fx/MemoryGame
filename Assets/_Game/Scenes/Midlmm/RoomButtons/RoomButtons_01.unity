@@ -10138,7 +10138,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6908261692811240468, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
       propertyPath: _info.Note
-      value: If you're afraid, don't do it; if you do it, don't be afraid. Jump!
+      value: If you're afraid - don't do it, - if you're doing it - don't be afraid!
+        Jump!
       objectReference: {fileID: 0}
     - target: {fileID: 6908261692811240468, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
       propertyPath: _info.DocName
