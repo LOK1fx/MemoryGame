@@ -10,6 +10,8 @@ namespace LOK1game
         [Space]
         public UnityEvent OnInteractEvent;
 
+        [SerializeField] private string _interactionTooltip;
+
         public void OnInteract(Player.Player sender)
         {
             OnInteractEvent?.Invoke();
@@ -23,7 +25,7 @@ namespace LOK1game
 
         public string GetTooltip()
         {
-            return "Press F";
+            return _interactionTooltip;
         }
     }
 }
