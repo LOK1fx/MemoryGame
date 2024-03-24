@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace LOK1game
+namespace LOK1game.UI
 {
     public class PlayerHUD : MonoBehaviour, IPlayerHud
     {
@@ -13,8 +13,8 @@ namespace LOK1game
         [SerializeField] private TextMeshProUGUI _interactionText;
         [SerializeField] private GameObject _pauseMenu;
         [SerializeField] private Notebook _notebook;
+        [SerializeField] private NoteNotification _noteNotification;
         
-
         private Player.Player _player;
         private PlayerController _controller;
 
@@ -29,6 +29,7 @@ namespace LOK1game
 
             _player.OnDeath += OnPlayerDeath;
             _player.Interaction.OnStartHighlithing += OnPlayerStartedInteraction;
+            _player.ItemManager.OnPhotoTaken += OnPlayerPhotoTaken;
 
             _controller.OnEscapePressed += OnEscapePressed;
             _controller.OnPhotosAlbumPressed += OnPhotosAlbumOpen;
@@ -38,6 +39,7 @@ namespace LOK1game
         {
             _player.OnDeath -= OnPlayerDeath;
             _player.Interaction.OnStartHighlithing -= OnPlayerStartedInteraction;
+            _player.ItemManager.OnPhotoTaken -= OnPlayerPhotoTaken;
 
             _controller.OnEscapePressed -= OnEscapePressed;
         }
@@ -51,6 +53,14 @@ namespace LOK1game
                     _player.Camera.UnlockCursor();
                 else
                     _player.Camera.LockCursor();
+            }
+        }
+
+        private void OnPlayerPhotoTaken(PhotoConfig config)
+        {
+            if (config.TypePhoto == ETypePhoto.Important || config.TypePhoto == ETypePhoto.Noted)
+            {
+                _noteNotification.Show("Importnant photo added to notes. Press Tab or H", Color.red);
             }
         }
 
