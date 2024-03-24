@@ -7,6 +7,10 @@ namespace LOK1game
 {
     public class Trolley : MonoBehaviour, IInteractable
     {
+        public TrolleyMovements TrolleyMovements => _trolleyMovements;
+
+        [SerializeField] private TrolleyMovements _trolleyMovements;
+
         [SerializeField] private TrolleyPlayerAnimations _interactionAnimations;
         [SerializeField] private Transform _actualPlayerPositionInTransport;
         [SerializeField] private Transform _playerBackPositionTransform;

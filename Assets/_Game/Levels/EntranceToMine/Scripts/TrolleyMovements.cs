@@ -3,7 +3,7 @@ using UnityEngine;
 
 
 public class TrolleyMovements : MonoBehaviour
-{
+{ 
     [SerializeField] private Transform _trolley;
     [SerializeField] private GameObject _startPoint;
     [SerializeField] private float _speed = 2;
@@ -42,6 +42,11 @@ public class TrolleyMovements : MonoBehaviour
         _currentSpeed = _speed;
     }
 
+    public void SetSpeed(float value)
+    {
+        _currentSpeed = value;
+    }
+
     private IEnumerator MoveToTarget()
     {
         Transform pointTransform = _point.GetTransform();
@@ -60,7 +65,7 @@ public class TrolleyMovements : MonoBehaviour
         if (_point.GetPoint() != null)
         {
             _point = _point.GetPoint();
-            
+            transform.LookAt(_point.GetTransform());
             StartTrolley();
         }
         else
