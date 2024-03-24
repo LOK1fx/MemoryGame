@@ -15,6 +15,8 @@ namespace LOK1game
         [SerializeField] private float _maxHorizontalPlayerCameraViewAngle = 30f;
         [SerializeField] private float _maxVerticalPlayerCameraViewAngle = 50f;
 
+        private Player.Player _playerInTrolley; 
+
         public void OnHighlight(bool isActive)
         {
             
@@ -38,6 +40,7 @@ namespace LOK1game
                 ReparentedScalesCorrect(sender);
 
                 sender.Camera.LimitViewAngles(_maxHorizontalPlayerCameraViewAngle, _maxVerticalPlayerCameraViewAngle);
+                _playerInTrolley = sender;
             }
             else
             {
@@ -55,6 +58,7 @@ namespace LOK1game
                 ReparentedScalesCorrect(sender);
 
                 sender.Camera.SetDefaultViewAngles();
+                _playerInTrolley = null;
             }
         }
 
@@ -79,6 +83,14 @@ namespace LOK1game
 
             Gizmos.color = Color.red;
             Gizmos.DrawRay(_playerBackPositionTransform.position, _playerBackPositionTransform.up * 2f);
+        }
+
+        private void OnTriggerEnter(Collider collision)
+        {
+            if (collision.transform.TryGetComponent<KillZone>(out var killZone) && _playerInTrolley != null)
+            {
+                _playerInTrolley.TakeDamage(new Damage(100));
+            }
         }
     }
 }
