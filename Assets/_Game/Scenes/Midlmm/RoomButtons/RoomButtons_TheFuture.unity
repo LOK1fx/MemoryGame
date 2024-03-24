@@ -6946,7 +6946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 418f01ee4fb0bd54a8a0b552852e980e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextLevelName: Labirint01_Core
+  _nextLevelName: EntranceToMine
 --- !u!65 &2144554947
 BoxCollider:
   m_ObjectHideFlags: 0

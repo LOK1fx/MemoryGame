@@ -6,6 +6,7 @@ public enum ELevelName
     None = -1,
     WakeUp_01,
     RoomsButton,
+    EntranceToMine,
     Labirint01_03,
 }
 
@@ -19,6 +20,7 @@ namespace LOK1game
         [SerializeField] private GameObject _defaultLevel;
         [SerializeField] private GameObject _wakeupLevel;
         [SerializeField] private GameObject _roomButtonLevel;
+        [SerializeField] private GameObject _entranceToMineLevel;
         [SerializeField] private GameObject _labirintLevel;
 
         private void Start()
@@ -43,6 +45,9 @@ namespace LOK1game
                     SceneManager.LoadScene("RoomButtons_01", LoadSceneMode.Additive);
                     SceneManager.LoadScene("RoomButtons_ThePast", LoadSceneMode.Additive);
                     break;
+                case ELevelName.EntranceToMine:
+                    SceneManager.LoadScene("EntranceToMine_background", LoadSceneMode.Additive);
+                    break;
                 case ELevelName.Labirint01_03:
                     SceneManager.LoadScene("Labirint01_03", LoadSceneMode.Additive);
                     break;
@@ -65,6 +70,9 @@ namespace LOK1game
                     break;
                 case ELevelName.RoomsButton:
                     _roomButtonLevel.SetActive(true);
+                    break;
+                case ELevelName.EntranceToMine:
+                    _entranceToMineLevel.SetActive(true);
                     break;
                 case ELevelName.Labirint01_03:
                     _labirintLevel.SetActive(true);
