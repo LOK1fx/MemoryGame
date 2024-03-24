@@ -5218,6 +5218,10 @@ PrefabInstance:
       propertyPath: _levelsToUnload.Array.data[0]
       value: EntranceToMine_TheFuture
       objectReference: {fileID: 0}
+    - target: {fileID: 6226426970311908872, guid: f03f350dbbbe7834190805a4fe47b641, type: 3}
+      propertyPath: _interactionTooltip
+      value: Press F to the pictures
+      objectReference: {fileID: 0}
     - target: {fileID: 7590664210980823604, guid: f03f350dbbbe7834190805a4fe47b641, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
