@@ -8,6 +8,7 @@ namespace LOK1game
     public class Trolley : MonoBehaviour, IInteractable
     {
         public TrolleyMovements TrolleyMovements => _trolleyMovements;
+        public Player.Player PlayerInTrolley => _playerInTrolley;
 
         [SerializeField] private TrolleyMovements _trolleyMovements;
 
@@ -18,6 +19,8 @@ namespace LOK1game
         [Space]
         [SerializeField] private float _maxHorizontalPlayerCameraViewAngle = 30f;
         [SerializeField] private float _maxVerticalPlayerCameraViewAngle = 50f;
+
+        [SerializeField] private AudioSource _audioSource;
 
         private Player.Player _playerInTrolley; 
 
@@ -30,40 +33,63 @@ namespace LOK1game
         {
             if (sender.State.InTransport == false)
             {
-                _interactionAnimations.OnStartInteraction();
-
-                sender.PassIntroTransport();
-                sender.HideVisuals();
-
-                sender.ItemManager.StopInput(sender);
-
-                sender.transform.SetParent(_actualPlayerPositionInTransport);
-                sender.transform.localPosition = Vector3.zero;
-                sender.Movement.Rigidbody.position = _actualPlayerPositionInTransport.position;
-
-                ReparentedScalesCorrect(sender);
-
-                sender.Camera.LimitViewAngles(_maxHorizontalPlayerCameraViewAngle, _maxVerticalPlayerCameraViewAngle);
-                _playerInTrolley = sender;
+                PassPlayerIntoTrolley(sender);
             }
             else
             {
-                _interactionAnimations.OnExitTrolley();
-
-                sender.DepassFromTransport();
-                sender.ShowVisuals();
-
-                sender.ItemManager.StartInput(sender);
-
-                sender.transform.SetParent(null);
-                sender.transform.position = _playerBackPositionTransform.position;
-                sender.Movement.Rigidbody.position = _playerBackPositionTransform.position;
-
-                ReparentedScalesCorrect(sender);
-
-                sender.Camera.SetDefaultViewAngles();
-                _playerInTrolley = null;
+                DepassPlayerFromTrolley(sender);
             }
+        }
+
+        public void PassPlayerIntoTrolley(Player.Player player)
+        {
+            if (player.State.InTransport == true)
+                return;
+
+            _interactionAnimations.OnStartInteraction();
+
+            player.PassIntroTransport();
+            player.HideVisuals();
+
+            player.ItemManager.StopInput(player);
+
+            player.transform.SetParent(_actualPlayerPositionInTransport);
+            player.transform.localPosition = Vector3.zero;
+            player.Movement.Rigidbody.position = _actualPlayerPositionInTransport.position;
+
+            ReparentedScalesCorrect(player);
+
+            player.Camera.LimitViewAngles(_maxHorizontalPlayerCameraViewAngle, _maxVerticalPlayerCameraViewAngle);
+            _playerInTrolley = player;
+
+            _audioSource.gameObject.SetActive(true);
+        }
+
+        public void DepassPlayerFromTrolley(Player.Player player)
+        {
+            if (player.State.InTransport == false)
+                return;
+
+            if (_playerInTrolley == null)
+                return;
+
+            _interactionAnimations.OnExitTrolley();
+
+            player.DepassFromTransport();
+            player.ShowVisuals();
+
+            player.ItemManager.StartInput(player);
+
+            player.transform.SetParent(null);
+            player.transform.position = _playerBackPositionTransform.position;
+            player.Movement.Rigidbody.position = _playerBackPositionTransform.position;
+
+            ReparentedScalesCorrect(player);
+
+            player.Camera.SetDefaultViewAngles();
+            _playerInTrolley = null;
+
+            _audioSource.gameObject.SetActive(false);
         }
 
         private void ReparentedScalesCorrect(Player.Player sender)
