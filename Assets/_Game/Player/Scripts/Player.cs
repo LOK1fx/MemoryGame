@@ -13,6 +13,7 @@ namespace LOK1game.Player
         public event Action OnRespawned;
         public event Action OnDeath;
         public event Action OnTakeDamage;
+        public event Action<DocInfo> OnTakeDocument;
 
         public PlayerMovement Movement { get; private set; }
         public PlayerCamera Camera { get; private set; }
@@ -134,6 +135,11 @@ namespace LOK1game.Player
 
             RemoveHealth(damage.Value);
             TakeDamageReplacatedEffects();
+        }
+
+        public void TakeDocument(DocInfo doc)
+        {
+            OnTakeDocument?.Invoke(doc);
         }
 
         public void PassIntroTransport()

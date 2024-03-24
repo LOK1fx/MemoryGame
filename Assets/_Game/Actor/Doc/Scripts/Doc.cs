@@ -2,14 +2,23 @@ using UnityEngine;
 
 namespace LOK1game
 {
+    [System.Serializable]
+    public class DocInfo
+    {
+        public string DocName;
+
+        [TextArea]
+        public string Note;
+    }
+
     [RequireComponent(typeof(Collider))]
     [RequireComponent(typeof(Outline))]
 
     public class Doc : MonoBehaviour, IInteractable
     {
-        public string Note => _note;
+        public DocInfo Info => _info;
 
-        [SerializeField] [TextArea] private string _note;
+        [SerializeField] private DocInfo _info = new DocInfo();
 
         [Space]
         [SerializeField] private GameObject _inHandDocModel;
@@ -26,6 +35,8 @@ namespace LOK1game
 
         public void OnInteract(Player.Player sender)
         {
+            sender.TakeDocument(Info);
+
             gameObject.SetActive(false);
 
             var socket = sender.FirstPersonArms.RightHandSocket;

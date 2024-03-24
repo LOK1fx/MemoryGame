@@ -30,6 +30,7 @@ namespace LOK1game.UI
             _player.OnDeath += OnPlayerDeath;
             _player.Interaction.OnStartHighlithing += OnPlayerStartedInteraction;
             _player.ItemManager.OnPhotoTaken += OnPlayerPhotoTaken;
+            _player.OnTakeDocument += OnPlayerTakeDocument;
 
             _controller.OnEscapePressed += OnEscapePressed;
             _controller.OnPhotosAlbumPressed += OnPhotosAlbumOpen;
@@ -40,6 +41,7 @@ namespace LOK1game.UI
             _player.OnDeath -= OnPlayerDeath;
             _player.Interaction.OnStartHighlithing -= OnPlayerStartedInteraction;
             _player.ItemManager.OnPhotoTaken -= OnPlayerPhotoTaken;
+            _player.OnTakeDocument -= OnPlayerTakeDocument;
 
             _controller.OnEscapePressed -= OnEscapePressed;
         }
@@ -62,6 +64,12 @@ namespace LOK1game.UI
             {
                 _noteNotification.Show("Importnant photo added to notes. Press Tab or H", Color.red);
             }
+        }
+
+        private void OnPlayerTakeDocument(DocInfo doc)
+        {
+            _noteNotification.Show($"<b><color=yellow>{doc.DocName}</color></b> " +
+                $"added to inventory. Press N", Color.yellow);
         }
 
         private void OnPlayerStartedInteraction(string tooltip, bool isActive)

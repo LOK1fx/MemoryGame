@@ -6866,6 +6866,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doc
       objectReference: {fileID: 0}
+    - target: {fileID: 74374229207877764, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 74374229207877765, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6909,6 +6913,23 @@ PrefabInstance:
     - target: {fileID: 74374229207877765, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908261692811240468, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
+      propertyPath: _note
+      value: These computers remembers me something. I think I have seen this before...
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908261692811240468, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
+      propertyPath: _docName
+      value: Computer Files
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908261692811240468, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
+      propertyPath: _info.Note
+      value: These computer have an old videos and photos... I can't remember but
+        I think that I have seen this before...
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908261692811240468, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
+      propertyPath: _info.DocName
+      value: Computer Files
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
