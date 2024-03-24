@@ -7,6 +7,7 @@ namespace LOK1game
     {
         public event Action OnEscapePressed;
         public event Action OnPhotosAlbumPressed;
+        public event Action OnDocumentsPressed;
 
         private bool _inPauseMenu;
 
@@ -31,6 +32,10 @@ namespace LOK1game
             if ((Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.H)) && _inPauseMenu == false)
             {
                 OnPhotosAlbumPressed?.Invoke();
+            }
+            if (Input.GetKeyDown(KeyCode.N))
+            {
+                OnDocumentsPressed?.Invoke();
             }
         }
     }
