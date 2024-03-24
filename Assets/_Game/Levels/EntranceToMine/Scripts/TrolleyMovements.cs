@@ -60,7 +60,7 @@ public class TrolleyMovements : MonoBehaviour
         if (_point.GetPoint() != null)
         {
             _point = _point.GetPoint();
-            transform.LookAt(_point.GetTransform());
+            
             StartTrolley();
         }
         else
@@ -68,5 +68,4 @@ public class TrolleyMovements : MonoBehaviour
             StopTrolley();
         }
     }
-
 }

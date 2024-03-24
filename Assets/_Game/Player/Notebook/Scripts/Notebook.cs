@@ -67,7 +67,6 @@ namespace LOK1game
 
         public void IsActivePhotosView(bool isActive)
         {
-
             if (isActive)
             {
                 _photosView.Show();
