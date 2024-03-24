@@ -14,7 +14,7 @@ public class TrolleyMovements : MonoBehaviour
     private void Start()
     {
         _point = _startPoint.GetComponent<IPointPath>();
-        StartTrolley();
+        StopTrolley();
     }
 
     private void Update()

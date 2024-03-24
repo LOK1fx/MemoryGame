@@ -9,6 +9,7 @@ public class ForkPointPath : MonoBehaviour, IPointPath
     [SerializeField] private GameObject _otherPointPath;
 
     private IPointPath _currentPointPath;
+
     public IPointPath GetPoint()
     {
         return _currentPointPath;
@@ -35,21 +36,5 @@ public class ForkPointPath : MonoBehaviour, IPointPath
     {
         _currentPointPath = null;
         SwitcherPosition = ESwitcherPosition.Neutral;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            SetStraightPath();
-        }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            SetOtherPath();
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            SetNeutralPath();
-        }
     }
 }
