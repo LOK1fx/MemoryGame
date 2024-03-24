@@ -1523,6 +1523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1640014089722434279}
   - component: {fileID: 7995277187733292692}
+  - component: {fileID: 2621617120929174171}
   m_Layer: 0
   m_Name: Docs
   m_TagString: Untagged
@@ -1563,6 +1564,20 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &2621617120929174171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3194048290594327897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de6d64182aeb3ad4fa12d2c6aaa230bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textTitle: {fileID: 1133019605091670517}
+  _textDocument: {fileID: 197463711857414293}
 --- !u!1 &3217679631682059586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2445,7 +2460,7 @@ GameObject:
   - component: {fileID: 1203095531585271989}
   - component: {fileID: 5058850667402049673}
   - component: {fileID: 4701882888151031791}
-  - component: {fileID: 3789842658205086088}
+  - component: {fileID: 2997089830548878668}
   - component: {fileID: 7425127479631600749}
   m_Layer: 0
   m_Name: Notebook
@@ -2528,8 +2543,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8080688686a5a274c9eba376f363f542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _notebookView: {fileID: 3789842658205086088}
---- !u!114 &3789842658205086088
+  _photosView: {fileID: 8399543189226925679}
+  _documentsView: {fileID: 2621617120929174171}
+  _notebookView: {fileID: 2997089830548878668}
+--- !u!114 &2997089830548878668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2541,9 +2558,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1f6c3b8b832874997b989bd204f15b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvas: {fileID: 7425127479631600749}
-  _prefabPhotoItem: {fileID: 8852004103973122185, guid: 432cdfc63d4755f40ad5a6c5b51c517e, type: 3}
-  _contentPhotos: {fileID: 2676881001286785716}
 --- !u!225 &7425127479631600749
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4803,6 +4817,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2383030152041503033}
   - component: {fileID: 7565804217569198064}
+  - component: {fileID: 8399543189226925679}
   m_Layer: 0
   m_Name: Photos
   m_TagString: Untagged
@@ -4840,10 +4855,24 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8061634328187417273}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &8399543189226925679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8061634328187417273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fcfec547456d3647afa0e13bb4255b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefabPhotoItem: {fileID: 8852004103973122185, guid: 432cdfc63d4755f40ad5a6c5b51c517e, type: 3}
+  _contentPhotos: {fileID: 2676881001286785716}
 --- !u!1 &8570814521843230155
 GameObject:
   m_ObjectHideFlags: 0
