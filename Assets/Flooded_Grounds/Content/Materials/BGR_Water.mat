@@ -12,7 +12,7 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -95,14 +95,14 @@ Material:
     - _DetailInt: 0.4
     - _DetailTile: 10
     - _DetailTiling: 10
-    - _Emis: 0.05
+    - _Emis: 0.106
     - _Fresnel: 1
     - _FresnelScale: 0.75
     - _GerstnerIntensity: 1
     - _Glossiness: 2.1641788
     - _InvertValue: 0
     - _Opacity: 0.75
-    - _Parallax: 0.0313
+    - _Parallax: 0.0511
     - _Power: 0
     - _RefInt: 0.7
     - _RefIntensity: 1
@@ -112,7 +112,7 @@ Material:
     - _RimWidth: 3
     - _SSSIntensity: 0.5
     - _SSSPower: 1
-    - _ScrollSpeed: 0.4
+    - _ScrollSpeed: 1.09
     - _Shift: 0
     - _Shininess: 0.6012862
     - _Smoothness: 1
@@ -120,8 +120,8 @@ Material:
     - _SpecContrast: 2
     - _SpecIntensity: 2.3
     - _Transparency: 0.95
-    - _WaveFreq: 20
-    - _WaveHeight: 0.25
+    - _WaveFreq: 28.6
+    - _WaveHeight: 0.4
     - _WavePower: 1.4029856
     - _WaveScale: 0.058
     - _fogEnd: 400
