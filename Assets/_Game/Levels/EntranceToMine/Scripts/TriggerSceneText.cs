@@ -13,8 +13,9 @@ namespace LOK1game
         [Space]
         [SerializeField] private PlayerSpawner _playerSpawner;
 
-
         private PlayerHUD _currentPlayerHUD;
+
+        private bool _isActivated;
 
         private void Start()
         {
@@ -42,6 +43,9 @@ namespace LOK1game
 
         private void OnTriggerEnter(Collider other)
         {
+            if (_isActivated == true)
+                return;
+
             if (other.TryGetComponent<Player.Player>(out var player))
             {
                 _currentPlayerHUD.ShowTutorial(_message);
@@ -49,6 +53,8 @@ namespace LOK1game
                 player.Camera.UnlockCursor();
                 player.Movement.SetAxisInput(Vector2.zero);
                 player.Movement.StopMovementInput();
+
+                _isActivated = true;
             }
         }
     }
