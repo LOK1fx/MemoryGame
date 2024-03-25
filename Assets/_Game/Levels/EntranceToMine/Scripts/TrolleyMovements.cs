@@ -19,15 +19,29 @@ public class TrolleyMovements : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (_currentSpeed > 0)
         {
-            StartTrolley();
+            UpdateRotation();
         }
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            StopTrolley();
-        }
+
+        //if (Input.GetKeyDown(KeyCode.Y))
+        //{
+        //    StopTrolley();
+        //}
         
+    }
+
+    private void UpdateRotation()
+    {
+        Transform point = null;
+
+        if (_point != null)
+            point = _point.GetTransform();
+
+        if(point != null)
+        {
+            transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, point.eulerAngles, 8f * Time.deltaTime);
+        }
     }
 
     public void StopTrolley()
@@ -65,7 +79,7 @@ public class TrolleyMovements : MonoBehaviour
         if (_point.GetPoint() != null)
         {
             _point = _point.GetPoint();
-            transform.LookAt(_point.GetTransform());
+            //transform.LookAt(_point.GetTransform());
             StartTrolley();
         }
         else

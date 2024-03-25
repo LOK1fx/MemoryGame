@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using LOK1game.Player;
@@ -9,11 +10,15 @@ namespace LOK1game.UI
 {
     public class PlayerHUD : MonoBehaviour, IPlayerHud
     {
+        public event Action<Player.Player> OnTutorialHide;
+
         [SerializeField] private GameObject _deathScreen;
         [SerializeField] private TextMeshProUGUI _interactionText;
         [SerializeField] private GameObject _pauseMenu;
         [SerializeField] private Notebook _notebook;
         [SerializeField] private NoteNotification _noteNotification;
+        [SerializeField] private CanvasGroupFade _tutorialCanvas;
+        [SerializeField] private TextMeshProUGUI _tutorialText;
         
         private Player.Player _player;
         private PlayerController _controller;
@@ -60,6 +65,17 @@ namespace LOK1game.UI
                 else
                     _player.Camera.LockCursor();
             }
+        }
+
+        public void ShowTutorial(string message)
+        {
+            _tutorialCanvas.Show();
+            _tutorialText.text = message;
+        }
+
+        public void HideTutorial()
+        {
+            OnTutorialHide?.Invoke(_player);
         }
 
         private void OnPlayerPhotoTaken(PhotoConfig config)

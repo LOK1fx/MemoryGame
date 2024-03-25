@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using LOK1game.Player;
@@ -7,6 +8,8 @@ namespace LOK1game
 {
     public class Trolley : MonoBehaviour, IInteractable
     {
+        public event Action OnStartMovement;
+
         public TrolleyMovements TrolleyMovements => _trolleyMovements;
         public Player.Player PlayerInTrolley => _playerInTrolley;
 
@@ -22,7 +25,19 @@ namespace LOK1game
 
         [SerializeField] private AudioSource _audioSource;
 
-        private Player.Player _playerInTrolley; 
+        private Player.Player _playerInTrolley;
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.T) && _playerInTrolley != null)
+            {
+                _trolleyMovements.StartTrolley();
+
+                _audioSource.gameObject.SetActive(true);
+
+                OnStartMovement?.Invoke();
+            }
+        }
 
         public void OnHighlight(bool isActive)
         {
@@ -61,8 +76,6 @@ namespace LOK1game
 
             player.Camera.LimitViewAngles(_maxHorizontalPlayerCameraViewAngle, _maxVerticalPlayerCameraViewAngle);
             _playerInTrolley = player;
-
-            _audioSource.gameObject.SetActive(true);
         }
 
         public void DepassPlayerFromTrolley(Player.Player player)
