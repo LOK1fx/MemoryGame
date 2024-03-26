@@ -92,15 +92,15 @@ namespace LOK1game.Player
             Interaction.OnInput(this);
             ItemManager.OnInput(this);
 
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
                 Movement.Jump();
 
-            if(Input.GetKeyDown(KeyCode.LeftControl))
-                Movement.StartCrouch();
+            //if(Input.GetKeyDown(KeyCode.LeftControl))
+            //    Movement.StartCrouch();
 
-            if(Input.GetKeyUp(KeyCode.LeftControl))
-                if(Movement.CanStand())
-                    Movement.StopCrouch();
+            //if(Input.GetKeyUp(KeyCode.LeftControl))
+            //    if(Movement.CanStand())
+            //        Movement.StopCrouch();
         }
 
         private void OnLand()

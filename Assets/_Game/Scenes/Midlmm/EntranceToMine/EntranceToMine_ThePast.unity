@@ -140,7 +140,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6226426970311908872, guid: f03f350dbbbe7834190805a4fe47b641, type: 3}
       propertyPath: _interactionTooltip
-      value: Press F to return time
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226426970311908872, guid: f03f350dbbbe7834190805a4fe47b641, type: 3}
+      propertyPath: OnInteractEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7590664210980823604, guid: f03f350dbbbe7834190805a4fe47b641, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -214,8 +218,53 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6226426970311908872, guid: f03f350dbbbe7834190805a4fe47b641, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f03f350dbbbe7834190805a4fe47b641, type: 3}
+--- !u!1 &133929407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7590664211318271376, guid: f03f350dbbbe7834190805a4fe47b641, type: 3}
+  m_PrefabInstance: {fileID: 133929406}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &133929408 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4265156647970953657, guid: f03f350dbbbe7834190805a4fe47b641, type: 3}
+  m_PrefabInstance: {fileID: 133929406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133929407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11cc0e95a381d224197cbe8c68553329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &133929409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133929407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3e87e26853d2e4ab03bca38d7ec437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInteractEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 133929408}
+        m_TargetAssemblyTypeName: LOK1game.LevelLoader, Assembly-CSharp
+        m_MethodName: Load
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _interactionTooltip: Press F to return in time
 --- !u!1001 &526122192
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -217,7 +217,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 65
   _groundCheckerPosition: {x: 0, y: 0.13, z: 0}
-  _groundCheckerSize: {x: 0.325, y: 0.17, z: 0.325}
+  _groundCheckerSize: {x: 0.25, y: 0.145, z: 0.25}
   _movementThreshold: 4
 --- !u!114 &2855878876504026400
 MonoBehaviour:

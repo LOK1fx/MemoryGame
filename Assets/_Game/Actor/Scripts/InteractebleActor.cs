@@ -12,10 +12,9 @@ namespace LOK1game
 
         [SerializeField] private string _interactionTooltip;
 
-        public void OnInteract(Player.Player sender)
+        public virtual void OnInteract(Player.Player sender)
         {
             OnInteractEvent?.Invoke();
-            sender.GetComponent<Eyeblink>().Blink();
         }
 
         public void OnHighlight(bool isActive)
