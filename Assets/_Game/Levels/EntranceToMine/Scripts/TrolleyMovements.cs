@@ -3,13 +3,14 @@ using UnityEngine;
 
 
 public class TrolleyMovements : MonoBehaviour
-{ 
+{
+    public float CurrentSpeed { get; private set; }
+
     [SerializeField] private Transform _trolley;
     [SerializeField] private GameObject _startPoint;
     [SerializeField] private float _speed = 2;
 
     private IPointPath _point;
-    private float _currentSpeed;
 
     private void Start()
     {
@@ -19,7 +20,7 @@ public class TrolleyMovements : MonoBehaviour
 
     private void Update()
     {
-        if (_currentSpeed > 0)
+        if (CurrentSpeed > 0)
         {
             UpdateRotation();
         }
@@ -46,19 +47,19 @@ public class TrolleyMovements : MonoBehaviour
 
     public void StopTrolley()
     {
-        _currentSpeed = 0;
+        CurrentSpeed = 0;
     }
 
     public void StartTrolley()
     {
         StopAllCoroutines();
         StartCoroutine(MoveToTarget());
-        _currentSpeed = _speed;
+        CurrentSpeed = _speed;
     }
 
     public void SetSpeed(float value)
     {
-        _currentSpeed = value;
+        CurrentSpeed = value;
     }
 
     private IEnumerator MoveToTarget()
@@ -67,7 +68,7 @@ public class TrolleyMovements : MonoBehaviour
 
         while (Vector3.Distance(transform.position, pointTransform.position) > float.Epsilon)
         {
-            transform.position = Vector3.MoveTowards(transform.position, pointTransform.position, _currentSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, pointTransform.position, CurrentSpeed * Time.deltaTime);
             yield return null;
         }
 

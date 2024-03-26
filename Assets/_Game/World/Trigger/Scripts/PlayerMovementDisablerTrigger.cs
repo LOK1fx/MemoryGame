@@ -13,11 +13,15 @@ namespace LOK1game
             if (other.TryGetComponent<Player.Player>(out var player) && _activated == false)
             {
                 if (_canMove)
+                {
                     player.Movement.StartMovementInput();
-                else
-                    player.Movement.StopMovementInput();
+                }
 
-                player.Movement.SetAxisInput(Vector2.zero);
+                else
+                {
+                    player.Movement.SetAxisInput(Vector2.zero);
+                    player.Movement.StopMovementInput();
+                }
 
                 _activated = true;
             }

@@ -33,9 +33,16 @@ namespace LOK1game
             {
                 _trolleyMovements.StartTrolley();
 
-                _audioSource.gameObject.SetActive(true);
-
                 OnStartMovement?.Invoke();
+            }
+
+            if (_trolleyMovements.CurrentSpeed > 0)
+            {
+                _audioSource.gameObject.SetActive(true);
+            }
+            else
+            {
+                _audioSource.gameObject.SetActive(false);
             }
         }
 
@@ -101,8 +108,6 @@ namespace LOK1game
 
             player.Camera.SetDefaultViewAngles();
             _playerInTrolley = null;
-
-            _audioSource.gameObject.SetActive(false);
         }
 
         private void ReparentedScalesCorrect(Player.Player sender)

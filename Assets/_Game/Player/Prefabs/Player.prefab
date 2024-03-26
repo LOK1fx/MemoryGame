@@ -167,7 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundMask:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 81
   _crouchPlayerHeight: 1.5
   _jumpCooldown: 0.1
   _maxSlideTime: 0
@@ -215,9 +215,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundMask:
     serializedVersion: 2
-    m_Bits: 65
-  _groundCheckerPosition: {x: 0, y: 0.13, z: 0}
-  _groundCheckerSize: {x: 0.25, y: 0.145, z: 0.25}
+    m_Bits: 81
+  _groundCheckerPosition: {x: 0, y: 0.12, z: 0}
+  _groundCheckerSize: {x: 0.25, y: 0.15, z: 0.25}
   _movementThreshold: 4
 --- !u!114 &2855878876504026400
 MonoBehaviour:
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b5c4f10e63827a44a13414f9a2f8b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionLength: 4
+  _interactionLength: 3.4
   _interactableLayerMask:
     serializedVersion: 2
     m_Bits: 65
@@ -333,7 +333,7 @@ MonoBehaviour:
   ClipsRate: 0.54
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 81
   _footstepsCollection:
   - {fileID: 11400000, guid: 17cbb5ad4e96b4a44b3aee8ece0a48eb, type: 2}
 --- !u!82 &6127853465099373672
