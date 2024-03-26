@@ -130,6 +130,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1697834250606983882, guid: f03f350dbbbe7834190805a4fe47b641, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.39215684
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697834250606983882, guid: f03f350dbbbe7834190805a4fe47b641, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.67104626
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697834250606983882, guid: f03f350dbbbe7834190805a4fe47b641, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250380748137728276, guid: f03f350dbbbe7834190805a4fe47b641, type: 3}
+      propertyPath: m_Color.b
+      value: 0.654902
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250380748137728276, guid: f03f350dbbbe7834190805a4fe47b641, type: 3}
+      propertyPath: m_Color.g
+      value: 0.82791644
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250380748137728276, guid: f03f350dbbbe7834190805a4fe47b641, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4265156647970953657, guid: f03f350dbbbe7834190805a4fe47b641, type: 3}
       propertyPath: _levelsToLoad.Array.data[0]
       value: EntranceToMine_TheFuture

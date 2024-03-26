@@ -63,17 +63,23 @@ namespace LOK1game.Editor
 
                 GUI.contentColor = Color.green;
 
-                if (GUILayout.Button("Additive"))
-                    _openedEditorScenes.Add(EditorSceneManager.OpenScene(scene.path, OpenSceneMode.Additive));
-
-                GUI.contentColor = Color.red;
-
-                if (GUILayout.Button("Unload"))
+                if (TryGetSceneByPath(scene.path, out var foundAdditiveScene) && foundAdditiveScene.isLoaded == false)
                 {
-                    if (_openedEditorScenes == null)
-                        return;
+                    if (GUILayout.Button("Additive"))
+                        _openedEditorScenes.Add(EditorSceneManager.OpenScene(scene.path, OpenSceneMode.Additive));
+                }
 
-                    EditorSceneManager.CloseScene(_openedEditorScenes.Where(s => s.path == scene.path).FirstOrDefault(), true);
+                if (TryGetSceneByPath(scene.path, out var foundScene) && foundScene.isLoaded == true)
+                {
+                    GUI.contentColor = Color.red;
+
+                    if (GUILayout.Button("Unload"))
+                    {
+                        if (_openedEditorScenes == null)
+                            return;
+
+                        EditorSceneManager.CloseScene(foundScene, true);
+                    }
                 }
 
                 GUILayout.EndHorizontal();
@@ -82,6 +88,20 @@ namespace LOK1game.Editor
 
                 GUILayout.Space(4f);
             }
+        }
+
+        private bool TryGetSceneByPath(string path, out Scene foundScene)
+        {
+            foreach (var scene in _loadedEditorScenes)
+            {
+                foundScene = _openedEditorScenes.Where(s => s.path == path).FirstOrDefault();
+
+                return true;
+            }
+
+            foundScene = new Scene();
+
+            return false;
         }
 
         private GUIStyle GetColoredButtonBackground(Color color)
