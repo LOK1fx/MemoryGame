@@ -166,7 +166,7 @@ namespace LOK1game.Player
 
             _currentSlideTime = 0f;
 
-            PlayerCollider.center = Vector3.up * 0.75f;
+            PlayerCollider.center = Vector3.up * (_defaultPlayerHeight - (_crouchPlayerHeight * 5 / 6));
             PlayerCollider.height = _crouchPlayerHeight;
 
             OnStartCrouch?.Invoke();

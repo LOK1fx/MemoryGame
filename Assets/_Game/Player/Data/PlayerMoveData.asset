@@ -15,8 +15,8 @@ MonoBehaviour:
   Friction: 8
   WalkGroundAccelerate: 65
   WalkGroundMaxVelocity: 6
-  CrouchGroundAccelerate: 60
-  CrouchGroundMaxVelocity: 6
+  CrouchGroundAccelerate: 40
+  CrouchGroundMaxVelocity: 4
   SprintGoundAccelerate: 100
   SprintGoundMaxVelocity: 10
   AirAccelerate: 5
