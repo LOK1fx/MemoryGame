@@ -30,8 +30,7 @@ namespace LOK1game.Editor
             UpdateScenesViewList();
             GUILayout.EndScrollView();
 
-            if (GUILayout.Button("Load all list or refresh",
-                EditorStyles.toolbarButton))
+            if (GUILayout.Button("Load all list or refresh"))
             {
                 _loadedEditorScenes = EditorBuildSettings.scenes.ToList();
             }
@@ -47,11 +46,13 @@ namespace LOK1game.Editor
 
         private void UpdateScenesViewList()
         {
+            var normalContentColor = GUI.contentColor;
+
             foreach (var scene in _loadedEditorScenes)
             {
                 if (GUILayout.Button(
                     new GUIContent($"{ConvertScenePathToName(scene.path)}",
-                    $"path: {scene.path}"), GetColoredButtonBackground(Color.yellow)))
+                    $"path: {scene.path}")))
                 {
                     EditorSceneManager.OpenScene(scene.path, OpenSceneMode.Single);
 
@@ -60,12 +61,14 @@ namespace LOK1game.Editor
 
                 GUILayout.BeginHorizontal();
 
-                if (GUILayout.Button("Additive", GetColoredButtonBackground(Color.green)))
-                {
-                    _openedEditorScenes.Add(EditorSceneManager.OpenScene(scene.path, OpenSceneMode.Additive));
-                }
+                GUI.contentColor = Color.green;
 
-                if (GUILayout.Button("Unload", GetColoredButtonBackground(Color.red)))
+                if (GUILayout.Button("Additive"))
+                    _openedEditorScenes.Add(EditorSceneManager.OpenScene(scene.path, OpenSceneMode.Additive));
+
+                GUI.contentColor = Color.red;
+
+                if (GUILayout.Button("Unload"))
                 {
                     if (_openedEditorScenes == null)
                         return;
@@ -75,7 +78,9 @@ namespace LOK1game.Editor
 
                 GUILayout.EndHorizontal();
 
-                GUILayout.Space(2f);
+                GUI.contentColor = normalContentColor;
+
+                GUILayout.Space(4f);
             }
         }
 
