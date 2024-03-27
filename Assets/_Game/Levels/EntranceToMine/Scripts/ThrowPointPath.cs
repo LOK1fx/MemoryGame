@@ -8,7 +8,7 @@ public class ThrowPointPath : MonoBehaviour, IPointPath
     {
         var rigidbody = _trolley.GetComponent<Rigidbody>();
         rigidbody.isKinematic = false;
-        rigidbody.AddForce(Vector3.forward * 10, ForceMode.Impulse);
+        rigidbody.AddForce(_trolley.transform.forward * 10, ForceMode.Impulse);
         return null;
     }
 

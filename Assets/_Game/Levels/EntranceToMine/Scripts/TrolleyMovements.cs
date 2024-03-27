@@ -41,7 +41,7 @@ public class TrolleyMovements : MonoBehaviour
 
         if(point != null)
         {
-            transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, point.eulerAngles, 8f * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, point.rotation, 8f * Time.deltaTime);
         }
     }
 
