@@ -6188,8 +6188,9 @@ GameObject:
   - component: {fileID: 1835096891}
   - component: {fileID: 1835096890}
   - component: {fileID: 1835096893}
+  - component: {fileID: 1835096894}
   m_Layer: 0
-  m_Name: SwitchTrigger
+  m_Name: SwitchMovementTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6269,6 +6270,20 @@ MonoBehaviour:
   - {fileID: 420373952}
   - {fileID: 1414641162}
   - {fileID: 1415543782}
+--- !u!114 &1835096894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835096889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7009afd6d59ee1b42b4dc292e744e943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gizmosColor: {r: 0.25943398, g: 0.7991065, b: 1, a: 1}
+  _wire: 1
 --- !u!1001 &1872906259
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86da9f5ce27918b45937242bb42ab7b8, type: 3}
   m_Name: RightStepPlayerMoveData
   m_EditorClassIdentifier: 
-  Friction: 9
-  WalkGroundAccelerate: 65
-  WalkGroundMaxVelocity: 3.5
+  Friction: 11
+  WalkGroundAccelerate: 70
+  WalkGroundMaxVelocity: 5
   CrouchGroundAccelerate: 30
   CrouchGroundMaxVelocity: 3
   SprintGoundAccelerate: 100
   SprintGoundMaxVelocity: 10
-  AirAccelerate: 3
-  AirMaxVelocity: 6
+  AirAccelerate: 11
+  AirMaxVelocity: 7
   JumpForce: 30

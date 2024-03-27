@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using LOK1game.Tools;
 
 namespace LOK1game
 {
-    public class CharacterSpawnPoint : MonoBehaviour
+    public class CharacterSpawnPoint : SaveableActorBase
     {
         public Vector3 Position => transform.position;
         public bool AllowNeutral => _allowNeutral;
@@ -42,6 +43,16 @@ namespace LOK1game
             Handles.Label(transform.position + Vector3.up * 0.5f, $"S:{name}");
             
 #endif
+        }
+
+        public override void Load()
+        {
+            transform.localPosition = PlayerPrefsExtensions.GetVector3($"{(int)Level}_Spawnpoint");
+        }
+
+        public override void Save()
+        {
+            PlayerPrefsExtensions.SetVector3($"{(int)Level}_Spawnpoint", transform.localPosition);
         }
     }
 }
