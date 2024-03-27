@@ -9,7 +9,7 @@ OcclusionCullingSettings:
     smallestHole: 0.25
     backfaceThreshold: 100
   m_SceneGUID: 848c12a0920ed4f478ceea390a957c6e
-  m_OcclusionCullingData: {fileID: 36300000, guid: 1812c353edf75a147abb29f69c7543fe, type: 2}
+  m_OcclusionCullingData: {fileID: 36300000, guid: d9db53b5722bedc4bb4f3a35ea7cb86c, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -3032,6 +3032,7 @@ GameObject:
   - component: {fileID: 1426406295}
   - component: {fileID: 1426406296}
   - component: {fileID: 1426406297}
+  - component: {fileID: 1426406298}
   m_Layer: 1
   m_Name: Volume
   m_TagString: Untagged
@@ -3067,8 +3068,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sharedProfile: {fileID: 11400000, guid: e99dee26c7f106647bd47ea94730b94b, type: 2}
-  isGlobal: 1
-  blendDistance: 0
+  isGlobal: 0
+  blendDistance: 0.29
   weight: 1
   priority: 600
 --- !u!114 &1426406297
@@ -3083,6 +3084,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11d290ef277ed041a54614b961aa37c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1426406298
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426406294}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.73, y: 5.92, z: 7.58}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1468700740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3160,7 +3174,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh385878
+  m_Name: pb_Mesh649312
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
