@@ -2014,6 +2014,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 723626281, guid: 7b900e28f63e5324eaf3c6fe134632da, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2686397109697766621, guid: 7b900e28f63e5324eaf3c6fe134632da, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
