@@ -4005,12 +4005,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6908261692811240468, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
       propertyPath: _info.Note
-      value: These computer have an old videos and photos... I can't remember but
-        I think that I have seen this before...
+      value: doc_cmpfiles_text
       objectReference: {fileID: 0}
     - target: {fileID: 6908261692811240468, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
       propertyPath: _info.DocName
-      value: Computer Files
+      value: doc_cmpfiles_title
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}

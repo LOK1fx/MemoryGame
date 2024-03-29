@@ -651,6 +651,7 @@ GameObject:
   - component: {fileID: 5182085894210413609}
   - component: {fileID: 7458770040455762775}
   - component: {fileID: 8535006891080058183}
+  - component: {fileID: 335744175001923008}
   m_Layer: 0
   m_Name: Tooltip
   m_TagString: Untagged
@@ -775,6 +776,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &335744175001923008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962571945789277716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0479f28880498994e8100818cc63661b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: tooltip_pause_menu
 --- !u!1 &1214137874544230935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,6 +1634,7 @@ GameObject:
   - component: {fileID: 8156945779610463486}
   - component: {fileID: 759166818079651596}
   - component: {fileID: 1146524421389001405}
+  - component: {fileID: 7999356992169141297}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1744,6 +1759,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7999356992169141297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3217679631682059586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0479f28880498994e8100818cc63661b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: photo_description_simple
 --- !u!1 &3532253879740914838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,6 +1820,7 @@ GameObject:
   - component: {fileID: 1493809517240809158}
   - component: {fileID: 986786363183964079}
   - component: {fileID: 6498152251853554894}
+  - component: {fileID: 4234327870548173177}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1916,6 +1945,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4234327870548173177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3655598821407426518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0479f28880498994e8100818cc63661b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: photo_description_noted
 --- !u!1 &3683122654168983357
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,6 +2250,7 @@ GameObject:
   - component: {fileID: 3773074633573998140}
   - component: {fileID: 6361057733181458}
   - component: {fileID: 8873179353976994362}
+  - component: {fileID: 7594223224232051567}
   m_Layer: 0
   m_Name: Tooltip
   m_TagString: Untagged
@@ -2332,6 +2375,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7594223224232051567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231391986913831145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0479f28880498994e8100818cc63661b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: tooltip_cursor
 --- !u!1 &4625550491165161396
 GameObject:
   m_ObjectHideFlags: 0
@@ -2896,6 +2952,7 @@ GameObject:
   - component: {fileID: 4947957421590196480}
   - component: {fileID: 1427465366351119606}
   - component: {fileID: 1971189590109391911}
+  - component: {fileID: 5387982531972373503}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3020,6 +3077,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5387982531972373503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5160328127588470807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0479f28880498994e8100818cc63661b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: photo_description_important
 --- !u!1 &5297820332835812778
 GameObject:
   m_ObjectHideFlags: 0

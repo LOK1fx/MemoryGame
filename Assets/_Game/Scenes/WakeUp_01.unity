@@ -2654,11 +2654,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6908261692811240468, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
       propertyPath: _info.Note
-      value: Nature....
+      value: doc_no1_text
       objectReference: {fileID: 0}
     - target: {fileID: 6908261692811240468, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
       propertyPath: _info.DocName
-      value: ---- No1
+      value: doc_no1_title
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
@@ -8891,15 +8891,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6908261692811240468, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
       propertyPath: _info.Note
-      value: I feel very lost. My head hurt like hell just a second ago, but I seem
-        to be okay now. I had a bag with me, I'm not even sure it was mine now, but
-        it had a camera in it, a working camera. The film on it is completely blank,
-        the camera itself is as good as new, which is surprising. Everything around
-        me is enclosed, I want to get out.
+      value: doc_flngs_text
       objectReference: {fileID: 0}
     - target: {fileID: 6908261692811240468, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
       propertyPath: _info.DocName
-      value: Feelings.
+      value: doc_flngs_title
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}

@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
 namespace LOK1game
 {
     public class DocumentsView : MonoBehaviour
@@ -32,8 +31,8 @@ namespace LOK1game
         public void DisplayDocument(DocInfo info)
         {
             if (info == null) return;
-            _textTitle.text = info.DocName;
-            _textDocument.text = info.Note;
+            _textTitle.text = LocalisationSystem.GetLocalisedValue(info.DocName);
+            _textDocument.text = LocalisationSystem.GetLocalisedValue(info.Note);
         }
     }
 }

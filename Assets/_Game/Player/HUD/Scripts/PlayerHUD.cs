@@ -103,7 +103,8 @@ namespace LOK1game.UI
 
         private void OnPlayerTakeDocument(DocInfo doc)
         {
-            _noteNotification.Show(string.Format(LocalisationSystem.GetLocalisedValue("notification_doc"), doc.DocName), Color.yellow);
+            _noteNotification.Show(string.Format(LocalisationSystem.GetLocalisedValue("notification_doc"),
+                LocalisationSystem.GetLocalisedValue(doc.DocName)), Color.yellow);
 
             _notebook.SetDocInfo(doc);
         }
@@ -125,9 +126,14 @@ namespace LOK1game.UI
 
             //temporary, i think
             if (_pauseMenu.activeSelf)
+            {
                 _player.Camera.UnlockCursor();
+                _player.Movement.SetAxisInput(Vector2.zero); //stops the player
+            } 
             else
+            {
                 _player.Camera.LockCursor();
+            }
         }
 
         public void EnableHiddenText(int idPhoto)

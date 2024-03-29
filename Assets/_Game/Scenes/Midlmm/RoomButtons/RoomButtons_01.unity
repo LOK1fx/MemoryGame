@@ -10365,12 +10365,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6908261692811240468, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
       propertyPath: _info.Note
-      value: If you're afraid - don't do it, - if you're doing it - don't be afraid!
-        Jump!
+      value: doc_strng_text
       objectReference: {fileID: 0}
     - target: {fileID: 6908261692811240468, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
       propertyPath: _info.DocName
-      value: Stranger Things...
+      value: doc_strng_title
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02cd87a56b317e948aee68e4c3327017, type: 3}
