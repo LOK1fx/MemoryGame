@@ -179,8 +179,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: What happened
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0857a0592a5bb224bb2e2019d7cd060f, type: 2}
+  m_sharedMaterial: {fileID: 1544413492520545312, guid: 0857a0592a5bb224bb2e2019d7cd060f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -330,8 +330,8 @@ MonoBehaviour:
 
     <b>Good luck</b>'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0857a0592a5bb224bb2e2019d7cd060f, type: 2}
+  m_sharedMaterial: {fileID: 1544413492520545312, guid: 0857a0592a5bb224bb2e2019d7cd060f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -726,7 +726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5189294049317232554, guid: 815f2f05dfb5629469ed7877ef67eccd, type: 3}
       propertyPath: m_fontSize
-      value: 54.45
+      value: 75.3
       objectReference: {fileID: 0}
     - target: {fileID: 5189294049317232554, guid: 815f2f05dfb5629469ed7877ef67eccd, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -922,7 +922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5189294049317232554, guid: 815f2f05dfb5629469ed7877ef67eccd, type: 3}
       propertyPath: m_fontSize
-      value: 40.25
+      value: 35.65
       objectReference: {fileID: 0}
     - target: {fileID: 5189294049317232554, guid: 815f2f05dfb5629469ed7877ef67eccd, type: 3}
       propertyPath: m_HorizontalAlignment

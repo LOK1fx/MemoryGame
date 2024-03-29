@@ -37,7 +37,7 @@ namespace LOK1game
 
         public string GetTooltip()
         {
-            return "Press F to procced to next area";
+            return LocalisationSystem.GetLocalisedValue("tooltip_transition_to_next_level");
         }
     }
 }

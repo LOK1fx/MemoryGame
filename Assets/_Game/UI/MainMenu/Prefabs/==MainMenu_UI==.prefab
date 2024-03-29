@@ -135,8 +135,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Language
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0857a0592a5bb224bb2e2019d7cd060f, type: 2}
+  m_sharedMaterial: {fileID: 1544413492520545312, guid: 0857a0592a5bb224bb2e2019d7cd060f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -271,8 +271,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'You need to apply language change, click this:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0857a0592a5bb224bb2e2019d7cd060f, type: 2}
+  m_sharedMaterial: {fileID: 1544413492520545312, guid: 0857a0592a5bb224bb2e2019d7cd060f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.95
+  m_fontSize: 39.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1484,7 +1484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5189294049317232554, guid: 815f2f05dfb5629469ed7877ef67eccd, type: 3}
       propertyPath: m_fontSize
-      value: 31.3
+      value: 27.75
       objectReference: {fileID: 0}
     - target: {fileID: 5189294049317232554, guid: 815f2f05dfb5629469ed7877ef67eccd, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -1859,7 +1859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5189294049317232554, guid: 815f2f05dfb5629469ed7877ef67eccd, type: 3}
       propertyPath: m_fontSize
-      value: 31.3
+      value: 27.75
       objectReference: {fileID: 0}
     - target: {fileID: 5189294049317232554, guid: 815f2f05dfb5629469ed7877ef67eccd, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -2273,7 +2273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5189294049317232554, guid: 815f2f05dfb5629469ed7877ef67eccd, type: 3}
       propertyPath: m_fontSize
-      value: 67.1
+      value: 59.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 815f2f05dfb5629469ed7877ef67eccd, type: 3}
@@ -2479,7 +2479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5189294049317232554, guid: 815f2f05dfb5629469ed7877ef67eccd, type: 3}
       propertyPath: m_fontSize
-      value: 44.05
+      value: 59.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 815f2f05dfb5629469ed7877ef67eccd, type: 3}
@@ -2676,7 +2676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5189294049317232554, guid: 815f2f05dfb5629469ed7877ef67eccd, type: 3}
       propertyPath: m_fontSize
-      value: 40.8
+      value: 59.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 815f2f05dfb5629469ed7877ef67eccd, type: 3}
