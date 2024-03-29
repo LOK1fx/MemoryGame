@@ -6,6 +6,7 @@ namespace LOK1game.Player
     public class PlayerCamera : Actor, IPawn
     {
         public Controller Controller { get; private set; }
+        public bool IsInputProcessing { get; private set; } = true;
         
         public float Tilt;
         
@@ -123,6 +124,16 @@ namespace LOK1game.Player
             LimitViewAngles(_defaultMaxRightViewAngle, _defaultMaxUpViewAngle);
         }
 
+        public void StartInput()
+        {
+            IsInputProcessing = true;
+        }
+
+        public void StopInput()
+        {
+            IsInputProcessing = false;
+        }
+
         public void LockCursor()
         {
             Cursor.visible = false;
@@ -142,6 +153,9 @@ namespace LOK1game.Player
 
         public void OnInput(object sender)
         {
+            if (IsInputProcessing == false)
+                return;
+
             if(Input.GetKeyDown(KeyCode.Escape) && Cursor.lockState == CursorLockMode.Locked)
             {
                 Cursor.visible = true;

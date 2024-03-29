@@ -22,6 +22,7 @@ namespace LOK1game.DebugTools
         private GameObject _currentFreecam;
         private Player.Player _currentPlayer;
 
+
         private void OnEnable()
         {
             ImGuiUn.Layout += OnLayout;
@@ -56,10 +57,31 @@ namespace LOK1game.DebugTools
 
             ImGui.Begin("Dev window", ref _isDevMenuOpened);
 
+            DrawGameManagerMenu();
             DrawPlayerMenu();
             DrawCutsceneMenu();
+            DrawLevelManagerMenu();
 
             ImGui.End();
+        }
+
+        private void DrawGameManagerMenu()
+        {
+            if (ImGui.CollapsingHeader("Game manager"))
+            {
+                if (ImGui.Button("Set timescale to 5x", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                {
+                    Time.timeScale = 5f;
+                }
+                if (ImGui.Button("Set timescale to 3x", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                {
+                    Time.timeScale = 3f;
+                }
+                if (ImGui.Button("Set timescale to 1x", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                {
+                    Time.timeScale = 1f;
+                }
+            }
         }
 
         private void DrawPlayerMenu()
@@ -86,7 +108,7 @@ namespace LOK1game.DebugTools
                         if (_currentPlayer != null)
                         {
                             _currentPlayer.Movement.StartMovementInput();
-                            _currentPlayer.Camera.SetDefaultViewAngles();
+                            _currentPlayer.Camera.StartInput();
                             _currentPlayer.ItemManager.StartInput(this);
                         }
 
@@ -99,7 +121,7 @@ namespace LOK1game.DebugTools
                         if (_currentPlayer != null)
                         {
                             _currentPlayer.Movement.StopMovementInput();
-                            _currentPlayer.Camera.LimitViewAngles(0f, 0f);
+                            _currentPlayer.Camera.StopInput();
                             _currentPlayer.ItemManager.StopInput(this);
                         }
 
@@ -127,6 +149,37 @@ namespace LOK1game.DebugTools
                         if (director.state == PlayState.Playing)
                             director.time = director.duration - 0.1f;
                     }  
+                }
+            }
+        }
+
+        private void DrawLevelManagerMenu()
+        {
+            if (ImGui.CollapsingHeader("Level manager"))
+            {
+                if (ImGui.Button("Load MainMenu", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                {
+                    SceneManager.LoadSceneAsync("MainMenu");
+                }
+                if (ImGui.Button("Load WakeUp", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                {
+                    SceneManager.LoadSceneAsync("WakeUp_Core");
+                }
+                if (ImGui.Button("Load RoomButtons", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                {
+                    SceneManager.LoadSceneAsync("RoomButtons");
+                }
+                if (ImGui.Button("Load EntranceToMine", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                {
+                    SceneManager.LoadSceneAsync("EntranceToMine");
+                }
+                if (ImGui.Button("Load Labirint01", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                {
+                    SceneManager.LoadSceneAsync("Labirint01_Core");
+                }
+                if (ImGui.Button("Load Shore", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                {
+                    SceneManager.LoadSceneAsync("Shore_Core");
                 }
             }
         }

@@ -284,7 +284,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 3000
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
@@ -318,6 +318,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68b8dffe112dd74a8659892b42d234c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DebugLayerMask:
+    serializedVersion: 2
+    m_Bits: 2147483647
   StandardLight: {fileID: 7336537773669961748}
   StrongLight: {fileID: 6994059965881258375}
   movementSpeed: 10

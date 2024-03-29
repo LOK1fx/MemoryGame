@@ -2,8 +2,12 @@ using UnityEngine;
 
 namespace LOK1game.DebugTools
 { 
-    public class FreecamMovement : MonoBehaviour
+    public class DebugFreecam : MonoBehaviour
     {
+        public LayerMask DebugLayerMask;
+
+        private LayerMask _defaultLayerMask;
+
         public GameObject StandardLight;
         public GameObject StrongLight;
 
@@ -16,10 +20,42 @@ namespace LOK1game.DebugTools
         public float fastZoomSensitivity = 50f;
 
         private bool _looking = false;
+        private bool _isDebugLayerActive;
+
+        private void Start()
+        {
+            _defaultLayerMask = Camera.main.cullingMask;
+        }
+
+        private void OnDestroy()
+        {
+            Camera.main.cullingMask = _defaultLayerMask;
+        }
 
         private void Update()
         {
             Movement();
+
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                if (_isDebugLayerActive)
+                {
+                    Camera.main.cullingMask = _defaultLayerMask;
+
+                    _isDebugLayerActive = false;
+                }
+                else
+                {
+                    Camera.main.cullingMask = DebugLayerMask;
+
+                    _isDebugLayerActive = true;
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                SwitchLightMode();
+            }
         }
 
         private void Movement()
@@ -88,11 +124,6 @@ namespace LOK1game.DebugTools
             else if (Input.GetKeyUp(KeyCode.Mouse1))
             {
                 StopLooking();
-            }
-
-            if (Input.GetKeyDown(KeyCode.V))
-            {
-                SwitchLightMode();
             }
         }
 
