@@ -21,6 +21,7 @@ namespace LOK1game.DebugTools
 
         private GameObject _currentFreecam;
         private Player.Player _currentPlayer;
+        private LocalisationSystem.ELanguage _currentLanguage;
 
 
         private void OnEnable()
@@ -28,6 +29,7 @@ namespace LOK1game.DebugTools
             ImGuiUn.Layout += OnLayout;
 
             _currentPlayer = FindObjectOfType<Player.Player>();
+            _currentLanguage = LocalisationSystem.Language;
         }
         
         private void OnDisable()
@@ -55,7 +57,18 @@ namespace LOK1game.DebugTools
                 }
             }
 
-            ImGui.Begin("Dev debug window", ref _isDevMenuOpened);
+            ImGui.Begin("Dev debug window (Press F3 for cursor)", ref _isDevMenuOpened);
+
+            ImGui.Text("General");
+            ImGui.Separator();
+
+            ImGui.Text($"Game time (unscaled): {Time.unscaledTime}");
+            ImGui.Text($"Game FPS (unscaled): {(int)(1f / Time.unscaledDeltaTime)}");
+            ImGui.Text($"Game locale (hashed): {_currentLanguage}");
+
+            ImGui.Separator();
+
+            ImGui.Spacing();
 
             DrawPlayerInfo();
             DrawGameManagerMenu();
@@ -75,7 +88,7 @@ namespace LOK1game.DebugTools
         {
             if (_currentPlayer != null)
             {
-                ImGui.Text($"Player info: {_currentPlayer.name}");
+                ImGui.Text($"Player: {_currentPlayer.name}");
 
                 if (Controller.TryGetController<PlayerController>(out var playerController) == true)
                     ImGui.Text($"Controller: {playerController.name}");
@@ -96,7 +109,9 @@ namespace LOK1game.DebugTools
         {
             if (ImGui.CollapsingHeader("Game manager"))
             {
+                ImGui.Text("Locale");
                 ImGui.Separator();
+
                 if (ImGui.Button("Set English locale", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
                 {
                     LocalisationSystem.Language = LocalisationSystem.ELanguage.English;
@@ -106,8 +121,9 @@ namespace LOK1game.DebugTools
                     LocalisationSystem.Language = LocalisationSystem.ELanguage.Russian;
                 }
 
-                ImGui.Separator();
+                
                 ImGui.Text("Time");
+                ImGui.Separator();
 
                 if (ImGui.Button("Set timescale to 5x", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
                 {
