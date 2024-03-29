@@ -368,8 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35200edca246e2d42a3632caa046ce25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message: You can use the camera to memorise important objects. Take advantage
-    of this.
+  _message: tooltip_labirint01
   _playerSpawner: {fileID: 1749992528}
 --- !u!1 &502795807
 GameObject:

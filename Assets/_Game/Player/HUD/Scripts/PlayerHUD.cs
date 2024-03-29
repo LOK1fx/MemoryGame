@@ -70,7 +70,7 @@ namespace LOK1game.UI
         public void ShowTutorial(string message)
         {
             _tutorialCanvas.Show();
-            _tutorialText.text = message;
+            _tutorialText.text = LocalisationSystem.GetLocalisedValue(message);
         }
 
         public void HideTutorial()

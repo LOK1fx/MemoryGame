@@ -18786,19 +18786,19 @@ Transform:
   - {fileID: 1389357780}
   - {fileID: 1033869955}
   - {fileID: 176707809}
+  - {fileID: 749772635}
+  - {fileID: 822155127}
   - {fileID: 117223439}
-  - {fileID: 296505238}
-  - {fileID: 234945717}
-  - {fileID: 2129895879}
-  - {fileID: 1802084620}
   - {fileID: 1146957928}
   - {fileID: 1776646691}
-  - {fileID: 95635265}
+  - {fileID: 1802084620}
+  - {fileID: 296505238}
   - {fileID: 1868234574}
-  - {fileID: 822155127}
+  - {fileID: 234945717}
+  - {fileID: 2129895879}
   - {fileID: 608454355}
-  - {fileID: 749772635}
   - {fileID: 1994005872}
+  - {fileID: 95635265}
   m_Father: {fileID: 944041721}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23740,13 +23740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35200edca246e2d42a3632caa046ce25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message: 'There''s a trolley in front of you. You need to guide it to the end
-    to open the way. To do this, you will need to change the paths of the rails.
-    Try not to fall and not to drop the trolley.
-
-
-    Press T while in trolley to
-    start it.'
+  _message: tooltip_entrancetomine
   _playerSpawner: {fileID: 1841439281}
 --- !u!4 &1066647844 stripped
 Transform:

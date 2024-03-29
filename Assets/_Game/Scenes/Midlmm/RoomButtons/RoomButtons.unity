@@ -346,19 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35200edca246e2d42a3632caa046ce25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _message: 'There are objects in this level that will help you remember the past.
-
-    
-
-    The
-    camera images may show hidden memories.
-
-    
-
-    Tab or H - Camera Album
-
-    N
-    - last note'
+  _message: tooltip_roombuttons
   _playerSpawner: {fileID: 1554423485}
 --- !u!1001 &1334397044
 PrefabInstance:

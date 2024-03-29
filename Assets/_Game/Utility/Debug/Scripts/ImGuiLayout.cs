@@ -112,6 +112,8 @@ namespace LOK1game.DebugTools
                 ImGui.Text("Locale");
                 ImGui.Separator();
 
+                ImGui.BeginGroup();
+
                 if (ImGui.Button("Set English locale", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
                 {
                     LocalisationSystem.Language = LocalisationSystem.ELanguage.English;
@@ -121,7 +123,14 @@ namespace LOK1game.DebugTools
                     LocalisationSystem.Language = LocalisationSystem.ELanguage.Russian;
                 }
 
-                
+                ImGui.EndGroup();
+
+                if (ImGui.Button("Reload LocalisationSystem", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                {
+                    LocalisationSystem.Init();
+                }
+
+
                 ImGui.Text("Time");
                 ImGui.Separator();
 
