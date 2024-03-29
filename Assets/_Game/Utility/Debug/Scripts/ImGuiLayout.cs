@@ -55,12 +55,14 @@ namespace LOK1game.DebugTools
                 }
             }
 
-            ImGui.Begin("Dev window", ref _isDevMenuOpened);
+            ImGui.Begin("Dev debug window", ref _isDevMenuOpened);
 
             DrawGameManagerMenu();
+            DrawCameraMenu();
             DrawPlayerMenu();
             DrawCutsceneMenu();
             DrawLevelManagerMenu();
+            DrawMainMenuDebugger();
 
             ImGui.End();
         }
@@ -84,21 +86,10 @@ namespace LOK1game.DebugTools
             }
         }
 
-        private void DrawPlayerMenu()
+        private void DrawCameraMenu()
         {
-            if (ImGui.CollapsingHeader("Player"))
+            if (ImGui.CollapsingHeader("Camera manager"))
             {
-                if (ImGui.Button("Teleport player to exit (only in Labirint01)", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
-                {
-                    if (SceneManager.GetSceneByName("Labirint01_01").isLoaded == true)
-                        SceneManager.UnloadScene("Labirint01_01");
-
-                    if (SceneManager.GetSceneByName("Labirint01_03").isLoaded == false)
-                        SceneManager.LoadScene("Labirint01_03", LoadSceneMode.Additive);
-
-                    _currentPlayer.transform.position = new Vector3(93.75f, 3.47f, 49.56f);
-                }
-
                 if (ImGui.Button("Activate freecam", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
                 {
                     if (_isFreecamActive)
@@ -113,8 +104,6 @@ namespace LOK1game.DebugTools
                         }
 
                         _isFreecamActive = false;
-
-                        return;
                     }
                     else
                     {
@@ -125,13 +114,42 @@ namespace LOK1game.DebugTools
                             _currentPlayer.ItemManager.StopInput(this);
                         }
 
+                        var camera = Camera.main;
+
+                        if (_currentFreecam == null)
+                            _currentFreecam = Instantiate(_freecamPrefab, camera.transform.position, camera.transform.rotation);
+
                         _isFreecamActive = true;
                     }
+                }
 
-                    var camera = Camera.main;
+                if (_currentFreecam != null)
+                {
+                    if (ImGui.Button("[V] Switch light mode", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                    {
+                        _currentFreecam.GetComponent<DebugFreecam>().SwitchLightMode();
+                    }
+                    if (ImGui.Button("[C] Switch debug view", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                    {
+                        _currentFreecam.GetComponent<DebugFreecam>().SwitchDebugViewMode();
+                    }
+                }
+            }
+        }
 
-                    if (_currentFreecam == null)
-                        _currentFreecam = Instantiate(_freecamPrefab, camera.transform.position, camera.transform.rotation);
+        private void DrawPlayerMenu()
+        {
+            if (ImGui.CollapsingHeader("Player"))
+            {
+                if (ImGui.Button("Teleport player to exit (only in Labirint01)", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                {
+                    if (SceneManager.GetSceneByName("Labirint01_01").isLoaded == true)
+                        SceneManager.UnloadScene("Labirint01_01");
+
+                    if (SceneManager.GetSceneByName("Labirint01_03").isLoaded == false)
+                        SceneManager.LoadScene("Labirint01_03", LoadSceneMode.Additive);
+
+                    _currentPlayer.transform.position = new Vector3(93.75f, 3.47f, 49.56f);
                 }
             }
         }
@@ -180,6 +198,51 @@ namespace LOK1game.DebugTools
                 if (ImGui.Button("Load Shore", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
                 {
                     SceneManager.LoadSceneAsync("Shore_Core");
+                }
+            }
+        }
+
+        private void DrawMainMenuDebugger()
+        {
+            if (ImGui.CollapsingHeader("MainMenu background"))
+            {
+                if (MenuBackgroundRemember.Instance != null)
+                {
+                    if (SceneManager.GetActiveScene().name == "MainMenu")
+                    {
+                        if (ImGui.Button("Set WakeUp", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                        {
+                            MenuBackgroundRemember.Instance.Remember(ELevelName.WakeUp_01);
+
+                            SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Single);
+                        }
+                        if (ImGui.Button("Set RoomButtons", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                        {
+                            MenuBackgroundRemember.Instance.Remember(ELevelName.RoomsButton);
+
+                            SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Single);
+                        }
+                        if (ImGui.Button("Set EntranceToMine", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                        {
+                            MenuBackgroundRemember.Instance.Remember(ELevelName.EntranceToMine);
+
+                            SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Single);
+                        }
+                        if (ImGui.Button("Set Labirint01", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                        {
+                            MenuBackgroundRemember.Instance.Remember(ELevelName.Labirint01_03);
+
+                            SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Single);
+                        }
+                    }
+                    else
+                    {
+                        ImGui.Text("You arn't in MainMenu right now");
+                    }
+                }
+                else
+                {
+                    ImGui.Text("There are no MenuBackgroundRemember Instance");
                 }
             }
         }

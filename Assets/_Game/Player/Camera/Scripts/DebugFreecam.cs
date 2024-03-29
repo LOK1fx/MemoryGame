@@ -38,23 +38,28 @@ namespace LOK1game.DebugTools
 
             if (Input.GetKeyDown(KeyCode.C))
             {
-                if (_isDebugLayerActive)
-                {
-                    Camera.main.cullingMask = _defaultLayerMask;
-
-                    _isDebugLayerActive = false;
-                }
-                else
-                {
-                    Camera.main.cullingMask = DebugLayerMask;
-
-                    _isDebugLayerActive = true;
-                }
+                SwitchDebugViewMode();
             }
 
             if (Input.GetKeyDown(KeyCode.V))
             {
                 SwitchLightMode();
+            }
+        }
+
+        public void SwitchDebugViewMode()
+        {
+            if (_isDebugLayerActive)
+            {
+                Camera.main.cullingMask = _defaultLayerMask;
+
+                _isDebugLayerActive = false;
+            }
+            else
+            {
+                Camera.main.cullingMask = DebugLayerMask;
+
+                _isDebugLayerActive = true;
             }
         }
 
