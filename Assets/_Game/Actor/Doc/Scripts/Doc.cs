@@ -54,7 +54,7 @@ namespace LOK1game
 
         public string GetTooltip()
         {
-            return "Press F to take the document";
+            return LocalisationSystem.GetLocalisedValue("tooltip_take_doc");
         }
     }
 }

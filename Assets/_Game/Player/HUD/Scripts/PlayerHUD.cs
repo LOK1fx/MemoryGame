@@ -86,25 +86,24 @@ namespace LOK1game.UI
             if (config.TypePhoto == ETypePhoto.Important)
             {
                 color = Color.red;
-                photoTypeDescription = "Importnant";
+                photoTypeDescription = LocalisationSystem.GetLocalisedValue("photo_description_important");
             }  
             else if (config.TypePhoto == ETypePhoto.Noted)
             {
                 color = Color.cyan;
-                photoTypeDescription = "Vivid";
+                photoTypeDescription = LocalisationSystem.GetLocalisedValue("photo_description_noted");
             } 
             else
             {
                 return;
-            }  
+            }
 
-            _noteNotification.Show($"{photoTypeDescription} photo added to notes. Press Tab or H", color);
+            _noteNotification.Show(string.Format(LocalisationSystem.GetLocalisedValue("notification_photo"), photoTypeDescription), color);
         }
 
         private void OnPlayerTakeDocument(DocInfo doc)
         {
-            _noteNotification.Show($"<b><color=yellow>{doc.DocName}</color></b> " +
-                $"added to inventory. Press N", Color.yellow);
+            _noteNotification.Show(string.Format(LocalisationSystem.GetLocalisedValue("notification_doc"), doc.DocName), Color.yellow);
 
             _notebook.SetDocInfo(doc);
         }
