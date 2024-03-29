@@ -12,4 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7019420fac3e04c8f95df688d2ac32, type: 3}
   m_Name: Default Ini Settings Asset
   m_EditorClassIdentifier: 
-  _data: 
+  _data: '[Window][Debug##Default]
+
+    Pos=60,60
+
+    Size=400,400
+
+    Collapsed=0
+
+
+    [Window][Dev
+    debug window (Press F3 for cursor)]
+
+    Pos=59,58
+
+    Size=344,358
+
+    Collapsed=1
+
+
+'

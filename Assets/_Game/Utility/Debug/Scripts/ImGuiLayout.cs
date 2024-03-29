@@ -128,6 +128,8 @@ namespace LOK1game.DebugTools
                 if (ImGui.Button("Reload LocalisationSystem", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
                 {
                     LocalisationSystem.Init();
+
+                    _currentLanguage = LocalisationSystem.Language;
                 }
 
 

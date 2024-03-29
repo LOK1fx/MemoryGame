@@ -11,7 +11,7 @@ namespace LOK1game
             Chinese
         }
 
-        public static ELanguage Language = ELanguage.Russian;
+        public static ELanguage Language { get; set; } = ELanguage.Russian;
 
         private static Dictionary<string, string> LocalisedEN;
         private static Dictionary<string, string> LocalisedRU;
