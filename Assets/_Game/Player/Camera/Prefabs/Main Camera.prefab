@@ -260,6 +260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DEBUG_IMGUI
       objectReference: {fileID: 0}
+    - target: {fileID: 4352040224598336779, guid: ed1bbcd568cb1da4aa9b45ecdc238435, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6853681754560223934, guid: ed1bbcd568cb1da4aa9b45ecdc238435, type: 3}
       propertyPath: _camera
       value: 

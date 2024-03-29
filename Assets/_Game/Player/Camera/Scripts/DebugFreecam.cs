@@ -29,7 +29,8 @@ namespace LOK1game.DebugTools
 
         private void OnDestroy()
         {
-            Camera.main.cullingMask = _defaultLayerMask;
+            if (Camera.main != null)
+                Camera.main.cullingMask = _defaultLayerMask;  
         }
 
         private void Update()

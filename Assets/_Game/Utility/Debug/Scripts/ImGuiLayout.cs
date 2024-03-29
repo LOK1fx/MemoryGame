@@ -57,14 +57,36 @@ namespace LOK1game.DebugTools
 
             ImGui.Begin("Dev debug window", ref _isDevMenuOpened);
 
+            DrawPlayerInfo();
             DrawGameManagerMenu();
             DrawCameraMenu();
-            DrawPlayerMenu();
+
+            if (_currentPlayer != null)
+                DrawPlayerMenu();
+
             DrawCutsceneMenu();
             DrawLevelManagerMenu();
             DrawMainMenuDebugger();
 
             ImGui.End();
+        }
+
+        private void DrawPlayerInfo()
+        {
+            if (_currentPlayer != null)
+            {
+                ImGui.Text($"Player info - {_currentPlayer.name}");
+
+                ImGui.Separator();
+
+                ImGui.Text($"Player velocity: {_currentPlayer.Movement.Rigidbody.velocity}");
+                ImGui.Text($"Player position: {_currentPlayer.transform.position}");
+                ImGui.Text($"Player Islocal: {_currentPlayer.IsLocal}");
+                ImGui.Text($"Player IsDead: {_currentPlayer.IsDead}");
+                ImGui.Text($"Player InTransport: {_currentPlayer.State.InTransport}");
+
+                ImGui.Separator();
+            }
         }
 
         private void DrawGameManagerMenu()
@@ -125,6 +147,14 @@ namespace LOK1game.DebugTools
 
                 if (_currentFreecam != null)
                 {
+                    if(_currentPlayer != null)
+                    {
+                        if (ImGui.Button("Teleport player to freecam", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                        {
+                            _currentPlayer.transform.position = _currentFreecam.transform.position;
+                        }
+                    }
+                    
                     if (ImGui.Button("[V] Switch light mode", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
                     {
                         _currentFreecam.GetComponent<DebugFreecam>().SwitchLightMode();
