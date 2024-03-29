@@ -118,7 +118,7 @@ namespace LOK1game
 
         public string GetTooltip()
         {
-            return "Press F to sit in the trolley";
+            return LocalisationSystem.GetLocalisedValue("tooltip_sit_trolley");
         }
 
         private void OnDrawGizmos()

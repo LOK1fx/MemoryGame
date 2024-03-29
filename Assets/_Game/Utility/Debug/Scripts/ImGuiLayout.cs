@@ -93,6 +93,19 @@ namespace LOK1game.DebugTools
         {
             if (ImGui.CollapsingHeader("Game manager"))
             {
+                ImGui.Separator();
+                if (ImGui.Button("Set English locale", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                {
+                    LocalisationSystem.Language = LocalisationSystem.ELanguage.English;
+                }
+                if (ImGui.Button("Set Russian locale", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                {
+                    LocalisationSystem.Language = LocalisationSystem.ELanguage.Russian;
+                }
+
+                ImGui.Separator();
+                ImGui.Text("Time");
+
                 if (ImGui.Button("Set timescale to 5x", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
                 {
                     Time.timeScale = 5f;
@@ -205,29 +218,37 @@ namespace LOK1game.DebugTools
         {
             if (ImGui.CollapsingHeader("Level manager"))
             {
+                if (ImGui.Button("Reload current level", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
+                {
+                    SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+                }
+
+
+                ImGui.Separator();
+
                 if (ImGui.Button("Load MainMenu", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
                 {
-                    SceneManager.LoadSceneAsync("MainMenu");
+                    SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Single);
                 }
                 if (ImGui.Button("Load WakeUp", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
                 {
-                    SceneManager.LoadSceneAsync("WakeUp_Core");
+                    SceneManager.LoadSceneAsync("WakeUp_Core", LoadSceneMode.Single);
                 }
                 if (ImGui.Button("Load RoomButtons", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
                 {
-                    SceneManager.LoadSceneAsync("RoomButtons");
+                    SceneManager.LoadSceneAsync("RoomButtons", LoadSceneMode.Single);
                 }
                 if (ImGui.Button("Load EntranceToMine", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
                 {
-                    SceneManager.LoadSceneAsync("EntranceToMine");
+                    SceneManager.LoadSceneAsync("EntranceToMine", LoadSceneMode.Single);
                 }
                 if (ImGui.Button("Load Labirint01", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
                 {
-                    SceneManager.LoadSceneAsync("Labirint01_Core");
+                    SceneManager.LoadSceneAsync("Labirint01_Core", LoadSceneMode.Single);
                 }
                 if (ImGui.Button("Load Shore", new Vector2(BUTTON_SIZE_X, BUTTON_SIZE_Y)))
                 {
-                    SceneManager.LoadSceneAsync("Shore_Core");
+                    SceneManager.LoadSceneAsync("Shore_Core", LoadSceneMode.Single);
                 }
             }
         }

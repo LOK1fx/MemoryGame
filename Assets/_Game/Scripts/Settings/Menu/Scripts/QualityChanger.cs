@@ -19,9 +19,9 @@ namespace LOK1game
 
             var options = new List<TMP_Dropdown.OptionData>
             {
-                new TMP_Dropdown.OptionData("Very Low"),
-                new TMP_Dropdown.OptionData("Low"),
-                new TMP_Dropdown.OptionData("Medium")
+                new TMP_Dropdown.OptionData(LocalisationSystem.GetLocalisedValue("settings_graphics_level_very_low")),
+                new TMP_Dropdown.OptionData(LocalisationSystem.GetLocalisedValue("settings_graphics_level_low")),
+                new TMP_Dropdown.OptionData(LocalisationSystem.GetLocalisedValue("settings_graphics_level_medium"))
             };
 
             _dropdown.AddOptions(options);
@@ -30,12 +30,12 @@ namespace LOK1game
 
             var options = new List<TMP_Dropdown.OptionData>
             {
-                new TMP_Dropdown.OptionData("Very Low"),
-                new TMP_Dropdown.OptionData("Low"),
-                new TMP_Dropdown.OptionData("Medium"),
-                new TMP_Dropdown.OptionData("High"),
-                new TMP_Dropdown.OptionData("Very High"),
-                new TMP_Dropdown.OptionData("Ultra")
+                new TMP_Dropdown.OptionData(LocalisationSystem.GetLocalisedValue("settings_graphics_level_very_low")),
+                new TMP_Dropdown.OptionData(LocalisationSystem.GetLocalisedValue("settings_graphics_level_low")),
+                new TMP_Dropdown.OptionData(LocalisationSystem.GetLocalisedValue("settings_graphics_level_medium")),
+                new TMP_Dropdown.OptionData(LocalisationSystem.GetLocalisedValue("settings_graphics_level_high")),
+                new TMP_Dropdown.OptionData(LocalisationSystem.GetLocalisedValue("settings_graphics_level_very_high")),
+                new TMP_Dropdown.OptionData(LocalisationSystem.GetLocalisedValue("settings_graphics_level_ultra"))
             };
 
             _dropdown.AddOptions(options);
