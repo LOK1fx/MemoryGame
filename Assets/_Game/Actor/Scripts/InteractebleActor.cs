@@ -10,7 +10,9 @@ namespace LOK1game
         [Space]
         public UnityEvent OnInteractEvent;
 
+        [Header("InteractionTooltip is deprecated. \nUse InteractionTooltipKey instead.")]
         [SerializeField] private string _interactionTooltip;
+        [SerializeField] private string _interactionTooltipKey;
 
         public virtual void OnInteract(Player.Player sender)
         {
@@ -24,7 +26,7 @@ namespace LOK1game
 
         public string GetTooltip()
         {
-            return _interactionTooltip;
+            return LocalisationSystem.GetLocalisedValue(_interactionTooltipKey);
         }
     }
 }

@@ -8068,6 +8068,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _interactionTooltip: Press F to view files
+  _interactionTooltipKey: tooltip_view_files
 --- !u!1001 &7808837518885446762
 PrefabInstance:
   m_ObjectHideFlags: 0

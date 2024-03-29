@@ -75,7 +75,10 @@ namespace LOK1game.DebugTools
         {
             if (_currentPlayer != null)
             {
-                ImGui.Text($"Player info - {_currentPlayer.name}");
+                ImGui.Text($"Player info: {_currentPlayer.name}");
+
+                if (Controller.TryGetController<PlayerController>(out var playerController) == true)
+                    ImGui.Text($"Controller: {playerController.name}");
 
                 ImGui.Separator();
 

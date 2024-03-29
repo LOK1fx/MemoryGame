@@ -14,10 +14,18 @@ namespace LOK1game
 
         protected abstract void Awake();
         protected abstract void Update();
+
+        protected virtual void OnDestroy()
+        {
+            if(_controllers.Contains(this))
+            {
+                _controllers.Remove(this);
+            }
+        }
         
         public static T Create<T>(IPawn pawn = null) where T : Controller
         {
-            var controllerObject = new GameObject($"{pawn}^Controller");
+            var controllerObject = new GameObject($"{pawn} [Controller]");
             var controller = controllerObject.AddComponent<T>();
             
             if(pawn != null)
@@ -26,6 +34,11 @@ namespace LOK1game
             _controllers.Add(controller);
             
             return controller;
+        }
+
+        public static void ClearControllers()
+        {
+            _controllers.Clear();
         }
 
         public static bool TryGetController<T>(out T foundController) where T : Controller

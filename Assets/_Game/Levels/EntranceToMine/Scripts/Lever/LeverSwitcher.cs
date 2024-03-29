@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+
 namespace LOK1game
 {
     [RequireComponent(typeof(Outline))]
@@ -18,7 +18,7 @@ namespace LOK1game
 
         public string GetTooltip()
         {
-            return "Press F to switch";
+            return LocalisationSystem.GetLocalisedValue("tooltip_leverer");
         }
 
         public void OnHighlight(bool isActive)

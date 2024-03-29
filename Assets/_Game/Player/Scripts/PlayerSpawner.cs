@@ -18,6 +18,7 @@ namespace LOK1game
         [SerializeField] private GameObject _playerHud;
 
         private Player.Player _currentPlayer;
+        private PlayerController _currentPlayerController;
 
         private void Start()
         {
@@ -30,12 +31,18 @@ namespace LOK1game
 
             _currentPlayer = player.GetComponent<Player.Player>();
 
-            var controller = Controller.Create<PlayerController>(_currentPlayer);
-            OnSpawnedPlayer?.Invoke(_currentPlayer);
-            OnPlayerControllerSpawned?.Invoke(controller);
+            _currentPlayerController = Controller.Create<PlayerController>(_currentPlayer);
 
-            hud.GetComponent<IPlayerHud>().Bind(player.GetComponent<Player.Player>(), controller);
+            OnSpawnedPlayer?.Invoke(_currentPlayer);
+            OnPlayerControllerSpawned?.Invoke(_currentPlayerController);
+
+            hud.GetComponent<IPlayerHud>().Bind(player.GetComponent<Player.Player>(), _currentPlayerController);
             OnSpawnedPlayerHud?.Invoke(hud.GetComponent<IPlayerHud>());
+        }
+
+        private void OnDestroy()
+        {
+            Controller.ClearControllers();
         }
 
         private Vector3 GetSpawnPointPosition()

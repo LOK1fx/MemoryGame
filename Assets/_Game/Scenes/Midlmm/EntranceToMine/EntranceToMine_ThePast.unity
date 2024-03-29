@@ -289,6 +289,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _interactionTooltip: Press F to return in time
+  _interactionTooltipKey: tooltip_return_time
 --- !u!1001 &526122192
 PrefabInstance:
   m_ObjectHideFlags: 0
