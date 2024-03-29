@@ -59,6 +59,7 @@
 "tooltip_cursor","Press middle mouse button to activate cursor","Нажмите среднюю кнопку мыши, чтобы активировать курсор","zh"
 "tooltip_pause_menu","Press Esc or LeftAlt to close menu.","Нажмите Esc или LeftAlt, чтобы закрыть меню","zh"
 "tooltip_title","Tooltip","Подсказка","zh"
+"tooltip_language_switch","You need to apply language change, click this:","Вам надо применить изменение языка, нажмите на эту кнопку:","zh"
 "tooltip_take_doc","Press F to take the document","Нажмите F, чтобы взять документ","zh"
 "tooltip_sit_trolley","Press F to sit or leave the trolley","Нажмите F, чтобы сесть или покинуть вагонетку","zh"
 "tooltip_leverer","Press F to switch path","Нажмите F, чтобы поменять путь","zh"

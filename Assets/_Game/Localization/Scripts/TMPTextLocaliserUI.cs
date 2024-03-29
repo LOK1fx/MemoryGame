@@ -33,6 +33,11 @@ public class TMPTextLocaliserUI : MonoBehaviour, ILocalizer
         }
     }
 
+    public void UpdateLocalized()
+    {
+        Localize(_key);
+    }
+
 #if UNITY_EDITOR
 
     [ContextMenu("Update Text")]
