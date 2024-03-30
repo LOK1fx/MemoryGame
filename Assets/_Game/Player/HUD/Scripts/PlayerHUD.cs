@@ -138,7 +138,10 @@ namespace LOK1game.UI
 
             if (_notebook.IsShowing)
             {
-                _notebook.IsActivePhotosView(false);
+                if (_isPhotosAlbumOpen)
+                    OnPhotosAlbumOpen();
+                if (_isDocumentsOpen)
+                    OnDocumentOpen();
 
                 return;
             }

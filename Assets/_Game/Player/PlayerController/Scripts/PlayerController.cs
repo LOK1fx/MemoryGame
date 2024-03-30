@@ -29,7 +29,7 @@ namespace LOK1game
 
             if (IsInputProcessing)
             {
-                if ((Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.H)) && IsInputProcessing == false)
+                if ((Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.H)))
                 {
                     OnPhotosAlbumPressed?.Invoke();
                 }
