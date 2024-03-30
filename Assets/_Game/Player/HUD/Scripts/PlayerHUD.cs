@@ -25,6 +25,7 @@ namespace LOK1game.UI
 
         private bool _isPhotosAlbumOpen;
         private bool _isDocumentsOpen;
+        private bool _isTutorialShowing;
 
         public void Bind(Player.Player player, PlayerController controller)
         {
@@ -71,10 +72,15 @@ namespace LOK1game.UI
         {
             _tutorialCanvas.Show();
             _tutorialText.text = LocalisationSystem.GetLocalisedValue(message);
+
+            _isTutorialShowing = true;
         }
 
         public void HideTutorial()
         {
+            _tutorialCanvas.InstaHide();
+            _isTutorialShowing = false;
+
             OnTutorialHide?.Invoke(_player);
         }
 
@@ -118,10 +124,28 @@ namespace LOK1game.UI
         private void OnPlayerDeath()
         {
             _deathScreen.SetActive(true);
+            _pauseMenu.SetActive(false);
         }
 
         private void OnEscapePressed()
         {
+            if (_isTutorialShowing)
+            {
+                HideTutorial();
+
+                return;
+            }
+
+            if (_notebook.IsShowing)
+            {
+                _notebook.IsActivePhotosView(false);
+
+                return;
+            }
+
+            if (_player.IsDead)
+                return;
+
             _pauseMenu.SetActive(!_pauseMenu.activeSelf);
 
             //temporary, i think
@@ -129,10 +153,12 @@ namespace LOK1game.UI
             {
                 _player.Camera.UnlockCursor();
                 _player.Movement.SetAxisInput(Vector2.zero); //stops the player
+                _controller.IsInputProcessing = false;
             } 
             else
             {
                 _player.Camera.LockCursor();
+                _controller.IsInputProcessing = true;
             }
         }
 

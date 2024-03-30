@@ -9,7 +9,7 @@ namespace LOK1game
         public event Action OnPhotosAlbumPressed;
         public event Action OnDocumentsPressed;
 
-        private bool _inPauseMenu;
+        public bool IsInputProcessing { get; set; } = true;
 
         protected override void Awake()
         {
@@ -18,24 +18,25 @@ namespace LOK1game
 
         protected override void Update()
         {
-            if (_inPauseMenu == false)
+            if (IsInputProcessing)
                 ControlledPawn?.OnInput(this);
 
             //Right alt for editor tests
             if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.LeftAlt))
             {
-                _inPauseMenu = !_inPauseMenu;
-
                 OnEscapePressed?.Invoke();
             }
 
-            if ((Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.H)) && _inPauseMenu == false)
+            if (IsInputProcessing)
             {
-                OnPhotosAlbumPressed?.Invoke();
-            }
-            if (Input.GetKeyDown(KeyCode.N))
-            {
-                OnDocumentsPressed?.Invoke();
+                if ((Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.H)) && IsInputProcessing == false)
+                {
+                    OnPhotosAlbumPressed?.Invoke();
+                }
+                if (Input.GetKeyDown(KeyCode.N))
+                {
+                    OnDocumentsPressed?.Invoke();
+                }
             }
         }
     }

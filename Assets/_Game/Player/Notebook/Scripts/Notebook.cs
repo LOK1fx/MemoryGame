@@ -6,6 +6,8 @@ namespace LOK1game
 {
     public class Notebook : MonoBehaviour
     {
+        public bool IsShowing { get; private set; }
+
         [SerializeField] private PhotosView _photosView;
         [SerializeField] private DocumentsView _documentsView;
         [SerializeField] private NotebookView _notebookView;
@@ -71,11 +73,15 @@ namespace LOK1game
             {
                 _photosView.Show();
                 _notebookView.Show();
+
+                IsShowing = true;
             }
             else
             {
                 _photosView.Hide();
                 _notebookView.Hide();
+
+                IsShowing = false;
             }
         }
 
@@ -90,7 +96,12 @@ namespace LOK1game
             {
                 _documentsView.Hide();
                 _notebookView.Hide();
+
+                IsShowing = false;
             }
+
+            IsShowing = true;
+
             _documentsView.DisplayDocument(_currentDocInfo);
         }
 
