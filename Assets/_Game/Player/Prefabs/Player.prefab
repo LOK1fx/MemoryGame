@@ -69,6 +69,7 @@ MonoBehaviour:
   - {fileID: 3126094688640919624}
   - {fileID: 8293352706240460675}
   - {fileID: 4978867020241197585}
+  - {fileID: 7996442090211733677}
   _onDamageCameraPunch: {x: 10, y: 0, z: 0}
 --- !u!114 &2855878876504026402
 MonoBehaviour:
@@ -1004,6 +1005,11 @@ MeshRenderer:
 --- !u!23 &4978867020241197585 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 9185343219398796869, guid: 7127b003451f3e445800e74d9390a077, type: 3}
+  m_PrefabInstance: {fileID: 4206531175045184596}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7996442090211733677 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6096053549926567161, guid: 7127b003451f3e445800e74d9390a077, type: 3}
   m_PrefabInstance: {fileID: 4206531175045184596}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8829864968627994030
