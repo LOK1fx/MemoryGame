@@ -43,6 +43,10 @@ namespace LOK1game.DebugTools
         {
             //ImGui.ShowDemoWindow();
 
+            if (Input.GetKey(KeyCode.Mouse4)) // for screenshots and etc.
+                return;
+
+
             if(Input.GetKeyDown(KeyCode.F3))
             {
                 if(Cursor.lockState == CursorLockMode.Locked)

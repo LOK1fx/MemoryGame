@@ -106,6 +106,11 @@ namespace LOK1game.Player
             _recoilCamera.localRotation = Quaternion.Euler(_currentRecoilCameraRotation);
         }
 
+        public void SetRotation(Quaternion rotation)
+        {
+            _xRotation = rotation.eulerAngles.y;
+        }
+
         public void LimitViewAngles(float maxHorizontal, float maxVertical)
         {
             LimitViewAngles(maxHorizontal, maxHorizontal, maxVertical, maxVertical);

@@ -103,6 +103,11 @@ namespace LOK1game.Player
                     Movement.StopCrouch();
         }
 
+        public void SetRotation(Quaternion rotation)
+        {
+            Camera.SetRotation(rotation);
+        }
+
         private void OnLand()
         {
             Camera.AddCameraOffset(Vector3.down * 0.4f);

@@ -2247,6 +2247,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterSpawnPoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3670422013366464688, guid: b6d91455695145446a1d6a21a7d1231c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8290764366753905295, guid: b6d91455695145446a1d6a21a7d1231c, type: 3}
       propertyPath: m_RootOrder
       value: 10

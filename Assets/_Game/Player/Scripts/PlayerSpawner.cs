@@ -22,7 +22,8 @@ namespace LOK1game
 
         private void Start()
         {
-            var player = Instantiate(_player, GetSpawnPointPosition(), Quaternion.identity);
+            var spawnPoint = GetSpawnPointTansform();
+            var player = Instantiate(_player, spawnPoint.position, Quaternion.identity);
 
             var camera = Instantiate(_playerCamera, Vector3.zero, Quaternion.identity);
             OnPlayerCameraSpawned?.Invoke(camera);
@@ -30,6 +31,7 @@ namespace LOK1game
             var hud = Instantiate(_playerHud, Vector3.zero, Quaternion.identity);
 
             _currentPlayer = player.GetComponent<Player.Player>();
+            _currentPlayer.SetRotation(spawnPoint.rotation);
 
             _currentPlayerController = Controller.Create<PlayerController>(_currentPlayer);
 
@@ -45,19 +47,19 @@ namespace LOK1game
             Controller.ClearControllers();
         }
 
-        private Vector3 GetSpawnPointPosition()
+        private Transform GetSpawnPointTansform()
         {
             var spawnPoints = FindObjectsOfType<CharacterSpawnPoint>().ToList();
 
             if (spawnPoints.Count == 0)
-                return Vector3.zero;
+                return null;
 
             if (spawnPoints.Count < 1)
-                return Vector3.zero;
+                return null;
 
             var spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Count)];
 
-            return spawnPoint.transform.position;
+            return spawnPoint.transform;
         }
     }
 }
