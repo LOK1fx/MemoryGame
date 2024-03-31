@@ -23,6 +23,8 @@
 "settings_language_title","Language","Язык","语言"
 "settings_language_title_interface","Interface:","Интерфейс:","界面:"
 "settings_language_title_voice","Voice:","Озвучка:","声音:"
+"settings_toggle_label","Enable","Включить","声音:"
+"settings_vsync","VSync","Вертикальная синхронизация","声音:"
 "settings_graphics_level","Graphics level","уровень графики","图形级别"
 "settings_graphics_level_very_low","Low","Очень низкий","低"
 "settings_graphics_level_low","Low","Низкий","低"

@@ -76,6 +76,13 @@ namespace LOK1game.Player
             _defaultMaxLeftViewAngle = _maxLeftViewAngle;
             _defaultMaxUpViewAngle = _maxUpViewAngle;
             _defaultMaxDownViewAngle = _maxDownViewAngle;
+
+            Settings.OnSensivityChanged += OnSensivitySettingsChanged;
+        }
+
+        private void OnDestroy()
+        {
+            Settings.OnSensivityChanged -= OnSensivitySettingsChanged;
         }
 
         private void Update()
@@ -208,6 +215,11 @@ namespace LOK1game.Player
             }
 
             return (_sensivity * multiplier) * Time.deltaTime;
+        }
+
+        private void OnSensivitySettingsChanged(float newSens)
+        {
+            _sensivity = newSens;
         }
 
         private float ThreehoundredToZero(float value)

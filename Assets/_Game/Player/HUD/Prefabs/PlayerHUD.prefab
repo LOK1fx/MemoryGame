@@ -711,7 +711,7 @@ MonoBehaviour:
   m_text: Press Esc or LeftAlt to close menu.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0857a0592a5bb224bb2e2019d7cd060f, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1544413492520545312, guid: 0857a0592a5bb224bb2e2019d7cd060f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -735,7 +735,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.1
+  m_fontSize: 50.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -974,7 +974,7 @@ MonoBehaviour:
   m_text: Back to the main menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0857a0592a5bb224bb2e2019d7cd060f, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1544413492520545312, guid: 0857a0592a5bb224bb2e2019d7cd060f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3381,7 +3381,7 @@ MonoBehaviour:
   m_text: Load last checkpoint
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0857a0592a5bb224bb2e2019d7cd060f, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1544413492520545312, guid: 0857a0592a5bb224bb2e2019d7cd060f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4229,7 +4229,7 @@ MonoBehaviour:
   m_text: Settings
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0857a0592a5bb224bb2e2019d7cd060f, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1544413492520545312, guid: 0857a0592a5bb224bb2e2019d7cd060f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5166,7 +5166,7 @@ MonoBehaviour:
   m_text: Quit to desktop
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0857a0592a5bb224bb2e2019d7cd060f, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1544413492520545312, guid: 0857a0592a5bb224bb2e2019d7cd060f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
